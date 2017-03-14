@@ -116,9 +116,6 @@ html, body {
 .mdl-demo section.section--center {
   max-width: 860px;
 }
-.mdl-demo #features section.section--center {
-  max-width: 620px;
-}
 .mdl-demo section > header{
   display: flex;
   align-items: center;
@@ -181,15 +178,7 @@ html, body {
 .mdl-demo .mdl-card .mdl-card__supporting-text > h3:first-child {
   margin-bottom: 24px;
 }
-.mdl-demo .mdl-layout__tab-panel:not(#overview) {
-  background-color: white;
-}
-.mdl-demo #features section {
-  margin-bottom: 72px;
-}
-.mdl-demo #features h4, #features h5 {
-  margin-bottom: 16px;
-}
+
 .mdl-demo .toc {
   border-left: 4px solid #C1EEF4;
   margin: 24px;
@@ -219,4 +208,36 @@ html, body {
 
 .mdl-mega-footer--link-list li a {
   color: #D2D2D2;
+}
+
+.mdl-layout__tab-bar-container {
+  width: 890px;
+  display: block;
+  margin: 0 auto;
+}
+.img-benefit {
+  display: inline-block;
+  margin: 0px 40px;
+}
+.img-feature {
+  width: 100%;
+  display: block;
+}
+
+.div-team {
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  color: #808080;
+}
+.div-team h4 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #000000;
+}
+.div-team h5 {
+  font-size: 15px;
+  font-weight: bold;
+  color: #000000;
+  margin-top: 46px !important;
 }

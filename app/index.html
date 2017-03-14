@@ -50,7 +50,7 @@
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
       <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
@@ -59,22 +59,15 @@
         </div>
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-        </div>
         <div class="mdl-layout--small-screen-only mdl-layout__header-row">
           <h3>易智顺顺 EMS</h3>
         </div>
-        <!--<div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color&#45;&#45;primary-dark">-->
-          <!--<a href="#overview" class="mdl-layout__tab is-active">Overview</a>-->
-          <!--<a href="#features" class="mdl-layout__tab">Features</a>-->
-          <!--<a href="#features" class="mdl-layout__tab">Details</a>-->
-          <!--<a href="#features" class="mdl-layout__tab">Technology</a>-->
-          <!--<a href="#features" class="mdl-layout__tab">FAQ</a>-->
-          <!--<button class="mdl-button mdl-js-button mdl-button&#45;&#45;fab mdl-js-ripple-effect mdl-button&#45;&#45;colored mdl-shadow&#45;&#45;4dp mdl-color&#45;&#45;accent" id="add">-->
-            <!--<i class="material-icons" role="presentation">add</i>-->
-            <!--<span class="visuallyhidden">Add</span>-->
-          <!--</button>-->
-        <!--</div>-->
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-layout__header--transparent">
+          <a href="#overview" class="mdl-layout__tab is-active">易智顺顺 EMS</a>
+          <a href="#benefits" class="mdl-layout__tab">优点</a>
+          <a href="#features" class="mdl-layout__tab">功能</a>
+          <a href="#team" class="mdl-layout__tab">组织架构</a>
+        </div>
       </header>
       <main class="mdl-layout__content">
         <div class="mdl-layout__tab-panel is-active" id="overview">
@@ -145,6 +138,94 @@
             </div>
           </section>
         </div>
+        <div class="mdl-layout__tab-panel" id="benefits">
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+              <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+                <h4 class="mdl-cell mdl-cell--12-col mdl-typography--text-center">优点</h4>
+                <div style="width: 100%; height: 50px;"></div>
+                <img src="images/01-efficient.png"
+                     srcset="images/01-efficient@2x.png 2x,
+         images/01-efficient@3x.png 3x"
+                     class="img-benefit img-01-efficient">
+                <img src="images/02-accurate.png"
+                     srcset="images/02-accurate@2x.png 2x,
+         images/02-accurate@3x.png 3x"
+                     class="img-benefit img-02-accurate">
+                <img src="images/03-easy.png"
+                     srcset="images/03-easy@2x.png 2x,
+         images/03-easy@3x.png 3x"
+                     class="img-benefit img-03-easy">
+                <img src="images/04-alert.png"
+                     srcset="images/04-alert@2x.png 2x,
+         images/04-alert@3x.png 3x"
+                     class="img-benefit img-04-alert">
+                <img src="images/05-survive.png"
+                     srcset="images/05-survive@2x.png 2x,
+         images/05-survive@3x.png 3x"
+                     class="img-benefit img-05-survive">
+              </div>
+            </div>
+          </section>
+          <div style="width: 100%; height: 100px;"></div>
+        </div>
+        <div class="mdl-layout__tab-panel" id="features">
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+              <img src="images/driver-1.png"
+                   srcset="images/driver-1@2x.png 2x,
+       images/driver-1@3x.png 3x"
+                   class="img-feature img-driver-1">
+              <img src="images/driver-2.png"
+                   srcset="images/driver-2@2x.png 2x,
+       images/driver-2@3x.png 3x"
+                   class="img-feature img-driver-2">
+              <img src="images/driver-3.png"
+                   srcset="images/driver-3@2x.png 2x,
+       images/driver-3@3x.png 3x"
+                   class="img-feature img-driver-3">
+              <img src="images/mgr-1.png"
+                   srcset="images/mgr-1@2x.png 2x,
+       images/mgr-1@3x.png 3x"
+                   class="img-feature img-mgr-1">
+              <img src="images/mgr-2.png"
+                   srcset="images/mgr-2@2x.png 2x,
+       images/mgr-2@3x.png 3x"
+                   class="img-feature img-mgr-2">
+              <img src="images/mgr-3.png"
+                   srcset="images/mgr-3@2x.png 2x,
+       images/mgr-3@3x.png 3x"
+                   class="img-feature img-mgr-3">
+            </div>
+          </section>
+          <div style="width: 100%; height: 100px;"></div>
+        </div>
+        <div class="mdl-layout__tab-panel" id="team">
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <img src="images/hk.png"
+                 srcset="images/hk@2x.png 2x, images/hk@3x.png 3x"
+                 class="img-feature img-hk">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+              <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing div-team">
+                <div class="div-team">
+                  <h4>组织架构</h4>
+                  <h5>首席执行官</h5>
+                  <h5>销售团队</h5>
+                  销售团队负责对接企业客户与供应商，推广EMS易智行车辆管理系统。
+                  <h5>市场营销团队</h5>
+                  市场营销团队通过微信、新浪微博等线上平台，运用数字化营销，提升品牌知名度。
+                  <h5>研发团队</h5>
+                  研发团队负责IOS、安卓、服务器等的开发与维护。
+                  <h5>设计团队</h5>
+                  设计团队致力于UI设计，为用户提供更好的体验。
+                  <h5>客服团队</h5>
+                  客服团队负责与用户进行沟通，基于日常的反馈与建议，提升EMS的品质。
+                </div>
+              </div>
+            </div>
+          </section>
+          <div style="width: 100%; height: 100px;"></div>
+        </div>
         <footer class="mdl-mega-footer">
           <div class="mdl-mega-footer--middle-section">
             <div class="mdl-mega-footer--drop-down-section">
@@ -169,6 +250,10 @@
               <h1 class="mdl-mega-footer--heading">电子邮件</h1>
               <ul class="mdl-mega-footer--link-list">
                 <li><a href="mailto:info@easi-share.com">info@easi-share.com</a></li>
+              </ul>
+              <h1 class="mdl-mega-footer--heading">违法和不良信息举报电话</h1>
+              <ul class="mdl-mega-footer--link-list">
+                <li><a href="#">孔友夫 13916421026</a></li>
               </ul>
             </div>
             <div class="mdl-mega-footer--drop-down-section">
