@@ -241,3 +241,8 @@ html, body {
   color: #000000;
   margin-top: 46px !important;
 }
+
+.img-benefit.img-05-survive {
+  display: inline-block;
+  margin: 0 auto;
+}
