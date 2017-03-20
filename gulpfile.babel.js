@@ -39,7 +39,7 @@ const reload = browserSync.reload;
 
 // Lint JavaScript
 gulp.task('lint', () =>
-  gulp.src(['app/scripts/**/*.js','!node_modules/**'])
+  gulp.src(['app/scripts/**/*.js','!node_modules/**','!app/vendors/**'])
     .pipe($.eslint())
     .pipe($.eslint.format())
     .pipe($.if(!browserSync.active, $.eslint.failAfterError()))
@@ -57,15 +57,23 @@ gulp.task('images', () =>
 );
 
 // Copy all files at the root level (app)
-gulp.task('copy', () =>
-  gulp.src([
-    'app/*',
-    '!app/*.html',
-    'node_modules/apache-server-configs/dist/.htaccess'
-  ], {
-    dot: true
-  }).pipe(gulp.dest('dist'))
-    .pipe($.size({title: 'copy'}))
+gulp.task('copy', () => {
+    gulp.src([
+      'app/*',
+      '!app/*.html',
+      'node_modules/apache-server-configs/dist/.htaccess'
+    ], {
+      dot: true
+    }).pipe(gulp.dest('dist'))
+      .pipe($.size({title: 'copy'}));
+
+    gulp.src([
+      'app/vendors/*'
+    ], {
+      dot: true
+    }).pipe(gulp.dest('dist/vendors'))
+      .pipe($.size({title: 'copyVendor'}));
+  }
 );
 
 // Compile and automatically prefix stylesheets
