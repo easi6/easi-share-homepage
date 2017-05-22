@@ -47,7 +47,7 @@ $.lang.en = {
   'txt_manager': 'Manager',
   'txt_apply_bottom_content': 'Eliminate trivial tasks with EMS to focus on things that matters most',
   'txt_icp': '粤ICP备17020336号粤公网安备 44030402000541号<br>© 2017 深圳易智顺顺科技有限公司 Easi6 Limited. All Rights Reserved.',
-  'txt_terms_policy': 'Terms & Policy'
+  'txt_terms_policy': 'Terms & Policy',
 };
 
 $.lang.zh_rCN = {

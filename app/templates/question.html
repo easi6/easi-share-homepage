@@ -1,0 +1,25 @@
+<div class="register-qa-box">
+  <div class="register-q-box">
+    <span class="register-q">{{ number }}. {{ title }}</span>
+    {% if required %}
+      <span class="register-q-required">*</span>
+    {% endif %}
+    <span class="register-q-desc">{{ description }}</span>
+  </div>
+  <div class="register-a-box">
+    {% if type == 'text' %}
+      <input type="text" class="register-a-text-field" name="{{name}}"/>
+    {% elif type == 'radio' %}
+      {% for option in options %}
+        <input type="radio" value="{{option.value}}" id="{{name}}-{{option.value}}" name="{{name}}">
+        <label for="{{name}}-{{option.value}}">{{option.label[currentLanguage]}}</label>
+      {% endfor %}
+    {% elif type == 'checkbox' %}
+      {% for option in options %}
+        <input type="checkbox" value="{{option.value}}" id="{{name}}-{{option.value}}" name="{{name}}">
+        <label for="{{name}}-{{option.value}}">{{option.label[currentLanguage]}}</label>
+      {% endfor %}
+    {% endif %}
+    <span class="register-a-err"></span>
+  </div>
+</div>

@@ -36,6 +36,7 @@ import pkg from './package.json';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
+const nunjucks = require('gulp-nunjucks');
 
 // Lint JavaScript
 gulp.task('lint', () =>
@@ -135,6 +136,13 @@ gulp.task('scripts', () =>
       .pipe(gulp.dest('.tmp/scripts'))
 );
 
+gulp.task('nunjucks', () =>
+  gulp.src('./app/templates/question.html')
+    .pipe(nunjucks.precompile())
+    .pipe(gulp.dest('.tmp/templates'))
+    .pipe(gulp.dest('dist/templates'))
+);
+
 // Scan your HTML for assets & optimize them
 gulp.task('html', () => {
   return gulp.src('app/**/*.html')
@@ -164,7 +172,7 @@ gulp.task('html', () => {
 gulp.task('clean', () => del(['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
 
 // Watch files for changes & reload
-gulp.task('serve', ['scripts', 'styles'], () => {
+gulp.task('serve', ['scripts', 'styles', 'nunjucks'], () => {
   browserSync({
     notify: false,
     // Customize the Browsersync console logging prefix
@@ -183,6 +191,7 @@ gulp.task('serve', ['scripts', 'styles'], () => {
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
   gulp.watch(['app/scripts/**/*.js'], ['lint', 'scripts', reload]);
   gulp.watch(['app/images/**/*'], reload);
+  gulp.watch(['app/templates/**/*.html'], ['nunjucks', reload]);
 });
 
 // Build and serve the output from the dist build
