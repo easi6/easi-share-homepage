@@ -157,6 +157,8 @@ $('a').click(function() {
     setLanguage(lang);
 });
 
+$("[data-toggle='popover']").popover();
+
 setLanguage('en');
 
 /*

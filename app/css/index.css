@@ -430,3 +430,86 @@ h7 {
   opacity: 0.95;
   background-color: #000000;
 }
+
+.popover-wechat {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  z-index: 1060;
+  color: black;
+  display: none;
+  width: 230px !important;
+  height: 210px !important;
+  margin-left: -12px;
+  padding: 1px;
+  text-align: center;
+  white-space: normal;
+  background-color: white !important;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  border: 1px solid #ccc;
+  border-radius: 0 !important;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.popover-wechat.top {
+  margin-top: -63px;
+  margin-left: -7px;
+}
+
+.popover-wechat > .arrow, .popover-wechat > .arrow:after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid transparent;
+}
+
+.popover-wechat > .arrow {
+  border-width: 11px;
+}
+
+.popover-wechat > .arrow:after {
+  content: "";
+  border-width: 10px;
+}
+
+.popover-wechat.top> .arrow {
+  right: 50%;
+  bottom: -11px;
+  margin-right: -11px;
+  border-bottom-width: 0;
+  botder-top-color: #999;
+}
+
+.popover-wechat.top > .arrow:after {
+  bottom: 1px;
+  left: -17px;
+  content: " ";
+  border-bottom-width: 0;
+  border-top-color: #ffffff;
+}
+
+.popover-wechat > .popover-wechat-id {
+  font-family: NanumBarunGothicOTF;
+  margin-top: 26px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #4ba1ff;
+}
+
+.popover-wechat > .popover-wechat-content {
+  font-family: NanumBarunGothicOTF;
+  margin-bottom: 24px;
+  opacity: 0.4;
+  font-size: 14px;
+  color: #000000;
+}
+
+.popover-wechat > .popover-wechat-qr {
+  margin: 0 auto;
+  width: 90px;
+  height: 90px;
+  background: #000000;
+}
