@@ -6,13 +6,15 @@
 $.lang = {};
 
 $.lang.ko = {
-    'hello': 'Hello, World.',
-    'hi': '안녕하세요.'
+  'txt_apply': 'ㅁㄴㅇㅇㄹ',
+  'hello': 'Hello, World.',
+  'hi': '안녕하세요.'
 };
 
 $.lang.en = {
-    'hello': 'Hello, World.',
-    'hi': 'Hello.'
+  'txt_apply': 'Be in control',
+  'hello': 'Hello, World.',
+  'hi': 'Hello.'
 };
 
 /**
