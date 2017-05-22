@@ -35,12 +35,15 @@
         <li><a class="nav-menu-login" data-langStr="txt_login" href="#">Login</a></li>
         <li class="nav-divider1"><div class="divider1" role="separator"></div></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">English <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <div style="float: left;" data-langStr="locale">English</div>
+            <span style="margin-left: 27px;"><img src="images/btn-dropdown-n.svg"></span>
+          </a>
           <ul class="dropdown-menu">
-            <li><a data-lang="en" data-langStr="txt_en" href="#">English</a></li>
-            <li><a data-lang="ko" data-langStr="txt_ko" href="#">한국어</a></li>
-            <li><a data-langStr="txt_zh_rTW" href="#">번체</a></li>
-            <li><a data-langStr="txt_zh_rCN" href="#">간체</a></li>
+            <li><a data-lang="en" data-langStr="txt_en">English</a></li>
+            <li><a data-lang="ko" data-langStr="txt_ko">한국어</a></li>
+            <li><a data-lang="zh_rTW" data-langStr="txt_zh_rTW">번체</a></li>
+            <li><a data-lang="zh_rCN" data-langStr="txt_zh_rCN">간체</a></li>
           </ul>
         </li>
       </ul>
@@ -50,7 +53,7 @@
 <!-- Apply -->
 <div class="apply-field">
   <div class="center-div">
-    <h1 class="apply-txt" data-langStr="txt_apply">Be in control</h1>
+    <h1 class="apply-txt" data-langStr="title_apply">Be in control</h1>
     <button class="apply-btn" data-langStr="btn_apply" href="https://www.sojump.hk/jq/13895511.aspx">APPLY NOW</button>
   </div>
 </div>
@@ -59,9 +62,9 @@
   <h1 class="title_text" data-langStr="txt_ems1">Easishare Management System</h1>
   <h1 class="ems-text2" data-langStr="txt_ems2">Integrated fleet management platform</h1>
   <div class="illust-text">
-    <h2 class="illust-customer" data-langStr="txt_customer">CUSTOMER</h2>
-    <h2 class="illust-driver" data-langStr="txt_driver">DRIVER</h2>
-    <h2 class="illust-manager" data-langStr="txt_manager">MANAGER</h2>
+    <h2 class="illust-customer" data-langStr="txt_ems_customer">CUSTOMER</h2>
+    <h2 class="illust-driver" data-langStr="txt_ems_driver">DRIVER</h2>
+    <h2 class="illust-manager" data-langStr="txt_ems_manager">MANAGER</h2>
     <h3 class="illust-serve" data-langStr="txt_serve">Serve</h3>
     <h3 class="illust-order" data-langStr="txt_order">Order</h3>
     <h3 class="illust-dispatch" data-langStr="txt_dispatch">Dispatch</h3>
@@ -70,7 +73,7 @@
 <hr>
 <!-- EMS Service -->
 <div class="ems-service-field">
-  <h1 class="title_text" data-langStr="txt_ems_service">EMS Service</h1>
+  <h1 class="title_text" data-langStr="title_ems_service">EMS Service</h1>
   <div class="service-list">
     <div class="ems-customer-box" role="button">
       <div class="ems-service-text-div">
@@ -97,34 +100,30 @@
 <hr>
 <!-- Benefits -->
 <div class="benefits-field">
-  <h1 class="title_text" data-langStr="txt_benefits">Benefits</h1>
+  <h1 class="title_text" data-langStr="title_benefits">Benefits</h1>
   <div class="benefit-horizontal-div">
-    <div>
-      <div class="benefit-horizontal-list">
-        <div class="benefit-box">
-          <img class="benefit-icon" src="images/icon-survive.svg">
-          <h6 data-langStr="txt_survive_title">Survive!</h6>
-          <h7 data-langStr="txt_survive_content">Get more business with same fleet size by exchanging orders with other suppliers</h7>
-        </div>
-        <div class="benefit-box">
-          <img class="benefit-icon" src="images/icon-moreorder.svg">
-          <h6 data-langStr="txt_moreorder_title">More Order!</h6>
-          <h7 data-langStr="txt_moreorder_content">Get more order from other booking apps and OTAs connected to EMS</h7>
-        </div>
+    <div class="benefit-horizontal-list">
+      <div class="benefit-box">
+        <img class="benefit-icon" src="images/icon-survive.svg">
+        <h6 data-langStr="txt_survive_title">Survive!</h6>
+        <h7 data-langStr="txt_survive_content">Get more business with same fleet size by exchanging orders with other suppliers</h7>
+      </div>
+      <div class="benefit-box">
+        <img class="benefit-icon" src="images/icon-moreorder.svg">
+        <h6 data-langStr="txt_moreorder_title">More Order!</h6>
+        <h7 data-langStr="txt_moreorder_content">Get more order from other booking apps and OTAs connected to EMS</h7>
       </div>
     </div>
-    <div>
-      <div class="benefit-horizontal-list">
-        <div class="benefit-box">
-          <img class="benefit-icon" src="images/icon-ownit.svg">
-          <h6 data-langStr="txt_ownit_title">Own it!</h6>
-          <h7 data-langStr="txt_ownit_content">Get manager tool, customer and driver mobile application with your brand on it</h7>
-        </div>
-        <div class="benefit-box">
-          <img class="benefit-icon" src="images/icon-win.svg">
-          <h6 data-langStr="txt_win_title">Win!</h6>
-          <h7 data-langStr="txt_win_content">Going into bidding? Take secure cloud-based EMS with you to win</h7>
-        </div>
+    <div class="benefit-horizontal-list">
+      <div class="benefit-box">
+        <img class="benefit-icon" src="images/icon-ownit.svg">
+        <h6 data-langStr="txt_ownit_title">Own it!</h6>
+        <h7 data-langStr="txt_ownit_content">Get manager tool, customer and driver mobile application with your brand on it</h7>
+      </div>
+      <div class="benefit-box">
+        <img class="benefit-icon" src="images/icon-win.svg">
+        <h6 data-langStr="txt_win_title">Win!</h6>
+        <h7 data-langStr="txt_win_content">Going into bidding? Take secure cloud-based EMS with you to win</h7>
       </div>
     </div>
   </div>
@@ -132,7 +131,7 @@
 <hr>
 <!-- Social Proof -->
 <div class="social-proof-field">
-  <h1 class="title_text" data-langStr="txt_social_proof">Social Proof</h1>
+  <h1 class="title_text" data-langStr="title_social_proof">Social Proof</h1>
   <div class="social-div">
     <div class="quotation fa-quote-left" aria-hidden="true"></div>
     <div class="social-andasun">
@@ -184,12 +183,6 @@
     </div>
   </div>
 </div>
-
-<!--<div>-->
-  <!--<button type="button" data-lang="ko" class="btn btn-primary">한국어</button>-->
-  <!--<button type="button" data-lang="en" class="btn btn-primary">영어</button>-->
-<!--</div>-->
-
 <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
