@@ -54,21 +54,21 @@ hr {
 }
 
 .nav-menu-support {
-  font-size: 14px;
   margin-right: 30px;
-  color: #000000;
 }
 
 .nav-menu-login {
-  font-size: 14px;
   font-weight: bold;
-  color: #000000;
 }
 
 .dropdown-toggle {
   margin-right: 29px;
-  font-size: 14px;
   font-weight: bold;
+}
+
+.top-nav-text {
+  font-family: NanumBarunGothicOTF;
+  font-size: 14px;
   color: #000000;
 }
 
@@ -406,13 +406,7 @@ h7 {
   color: #ffffff;
 }
 
-/* Bottom NavBar*/
-.navbar-easi6 > .container-fluid > .collapse > .nav > li > a {
-  color: #ffffff;
-  font-family: ArialMT;
-  font-size: 12px;
-}
-
+/* Bottom NavBar */
 .nav-icon {
   width: 24px;
   height: 24px;
@@ -430,6 +424,21 @@ h7 {
 .navbar-easi6 {
   opacity: 0.95;
   background-color: #000000;
+}
+
+.default-nav {
+  visibility: visible;
+}
+
+.mobile-nav {
+  opacity: 1;
+  visibility: hidden;
+}
+
+.bottom-nav-text {
+  color: #ffffff;
+  font-family: ArialMT;
+  font-size: 12px;
 }
 
 /* Wechat popover */
@@ -518,52 +527,87 @@ h7 {
 
 /* 모바일인 경우(1000px 이하) 처리 */
 @media (max-width: 1000px) {
+  body {
+    padding-bottom: 50px;
+  }
+
   .navbar-header {
     float: none;
   }
+
   .navbar-left, .navbar-right {
     float: none !important;
   }
+
   .navbar-toggle {
     display: block;
   }
+
   .navbar-collapse {
     border-top: 1px solid transparent;
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+
+  .top-navbar {
     background: white;
   }
+
+  .bottom-navbar {
+    background: black;
+  }
+
   .navbar-fixed-top {
     top: 0;
     border-width: 0 0 1px;
   }
+
   .navbar-collapse.collapse {
-    display: none!important;
+    display: none !important;
   }
+
   .navbar-nav {
     float: none !important;
     margin-top: 8px;
   }
+
   .navbar-nav > li {
     float: none;
   }
+
   .navbar-nav > li > a {
     padding-top: 10px;
     padding-bottom: 10px;
   }
 
-  .collapse.in{
+  .navbar-ems.navbar-default .navbar-nav > li > a {
+    color: #000000;
+  }
+
+  .navbar-easi6.navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+  }
+
+  .bottom-nav-text {
+    font-family: NanumBarunGothicOTF;
+    font-size: 14px;
+  }
+
+  .collapse.in {
     display:block !important;
   }
 
-  .nav-menu-support, .nav-menu-login .dropdown-toggle {
+  .nav-menu-support, .nav-menu-login, .dropdown-toggle, .nav-menu-policy, .nav-menu-email {
+    opacity: 1;
+    font-weight: normal;
     margin: 0;
   }
 
-  .nav-cs-icon, .nav-divider1, .nav-divider2 {
+  .nav-cs-icon, .nav-divider1 {
     visibility: hidden;
     height: 0;
     margin: 0;
     padding-top: 0;
+    padding-bottom: 0;
   }
 
   .default-field {
@@ -637,6 +681,14 @@ h7 {
     margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .default-nav {
+    visibility: hidden;
+  }
+
+  .mobile-nav {
+    visibility: visible;
   }
 }
 
