@@ -58,12 +58,12 @@ const yesOrNo = [
 const cities = [];
 const cityValues = [
   'sz', 'hk', 'mc', 'zh', 'mz',
-  'gz', 'tw_tw', 'id_jk', 'id_bl',
+  'gz', 'tw_tw', 'id_jk', 'id_bl', 'etc',
 ];
 const cityNames = {};
 cityNames['en'] = [
   'Shenzhen', 'Hongkong', 'Macau', 'Zhuhai', 'Meizhou',
-  'Guangzhou', 'Taiwan', 'Jakarta', 'Bali',
+  'Guangzhou', 'Taiwan', 'Jakarta', 'Bali', 'Etc',
 ];
 cityNames['zh_rCN'] = [];
 cityNames['zh_rTW'] = [];

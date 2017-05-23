@@ -11,13 +11,17 @@
       <input type="text" class="register-a-text-field" name="{{name}}"/>
     {% elif type == 'radio' %}
       {% for option in options %}
-        <input type="radio" value="{{option.value}}" id="{{name}}-{{option.value}}" name="{{name}}">
-        <label for="{{name}}-{{option.value}}">{{option.label[currentLanguage]}}</label>
+        <div class="register-radio-option">
+          <input type="radio" value="{{option.value}}" id="radio-{{name}}-{{option.value}}" name="{{name}}">
+          <label for="radio-{{name}}-{{option.value}}">{{option.label[currentLanguage]}}</label>
+        </div>
       {% endfor %}
     {% elif type == 'checkbox' %}
       {% for option in options %}
-        <input type="checkbox" value="{{option.value}}" id="{{name}}-{{option.value}}" name="{{name}}">
-        <label for="{{name}}-{{option.value}}">{{option.label[currentLanguage]}}</label>
+        <div class="register-checkbox-option">
+          <input type="checkbox" value="{{option.value}}" id="check-{{name}}-{{option.value}}" name="{{name}}">
+          <label for="check-{{name}}-{{option.value}}">{{option.label[currentLanguage]}}</label>
+        </div>
       {% endfor %}
     {% endif %}
     <span class="register-a-err"></span>
