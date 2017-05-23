@@ -1,5 +1,6 @@
 const questions = {};
-questions['en'] = [
+
+questions.en = [
   'Company Name',
   'Phone Number',
   'Company Address',
@@ -39,7 +40,7 @@ const questionsTypeArr = [
 
 const yesOrNo = [
   {
-    value: 'yes',
+    value: 'true',
     label: {
       en: 'Yes',
       zh_rCN: '',
@@ -47,7 +48,7 @@ const yesOrNo = [
     }
   },
   {
-    value: 'no',
+    value: 'false',
     label: {
       en: 'No',
       zh_rCN: '',
@@ -174,3 +175,21 @@ function renderQuestions(currentLanguage) {
 }
 
 renderQuestions('en');
+
+$registerForm = $('#register-form')
+$registerForm.submit(() => {
+  const url = $registerForm.attr('action');
+  const data = $registerForm.serialize();
+  const success = (res) => {
+    console.log('res', res);
+  };
+  const dataType = 'json';
+  $.ajax({
+    type: "POST",
+    url: url,
+    data: data,
+    success: success,
+    dataType: dataType,
+  });
+  return false;
+});
