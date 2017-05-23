@@ -8,7 +8,7 @@
   </div>
   <div class="register-a-box">
     {% if type == 'text' %}
-      <input type="text" class="register-a-text-field" name="{{name}}"/>
+      <input type="text" class="register-a-text-field" name="{{name}}" {% if required %} required="true" {% endif %}/>
     {% elif type == 'radio' %}
       {% for option in options %}
         <div class="register-radio-option">

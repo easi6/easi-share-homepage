@@ -33,9 +33,14 @@ descriptions.en = [
 
   null,
 ];
+descriptions.zh_rCN = [];
+descriptions.zh_rTW = [];
+
 const questionsTypeArr = [
   'text', 'text', 'text', 'text', 'text',
-  'radio', 'checkbox', 'radio', 'checkbox', 'checkbox',
+
+  'radio', 'radio', 'radio', 'checkbox', 'checkbox',
+
   'radio',
 ];
 
@@ -59,8 +64,8 @@ const yesOrNo = [
 ];
 const cities = [];
 const cityValues = [
-  'sz', 'hk', 'mc', 'zh', 'mz',
-  'gz', 'tw_tw', 'id_jk', 'id_bl', 'etc',
+  0, 1, 2, 3, 5,
+  6, 1000, 2000, 2001, -1,
 ];
 const cityNames = {};
 cityNames.en = [
@@ -105,8 +110,8 @@ for (let i = 0; i < langNames.en.length; i++) {
 
 const vans = [];
 const vanValues = [
-  'van', 'sedan', 'x-van', 'x-sedan', 'bus',
-  'minibus', 'black-sedan',
+  0, 1, 2, 3, 4,
+  5, 6,
 ];
 const vanNames = {};
 vanNames.en = [
