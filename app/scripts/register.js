@@ -1,5 +1,4 @@
 const questions = {};
-
 questions.en = [
   'Company Name',
   'Phone Number',
@@ -15,9 +14,11 @@ questions.en = [
 
   'Do you want to take easiway, OTA orders?',
 ];
+questions.zh_rCN = [];
+questions.zh_rTW = [];
 
 const descriptions = {};
-descriptions['en'] = [
+descriptions.en = [
   'Enter your company’s full name',
   null,
   null,
@@ -45,7 +46,7 @@ const yesOrNo = [
       en: 'Yes',
       zh_rCN: '',
       zh_rTW: '',
-    }
+    },
   },
   {
     value: 'false',
@@ -53,8 +54,8 @@ const yesOrNo = [
       en: 'No',
       zh_rCN: '',
       zh_rTW: '',
-    }
-  }
+    },
+  },
 ];
 const cities = [];
 const cityValues = [
@@ -62,22 +63,22 @@ const cityValues = [
   'gz', 'tw_tw', 'id_jk', 'id_bl', 'etc',
 ];
 const cityNames = {};
-cityNames['en'] = [
+cityNames.en = [
   'Shenzhen', 'Hongkong', 'Macau', 'Zhuhai', 'Meizhou',
   'Guangzhou', 'Taiwan', 'Jakarta', 'Bali', 'Etc',
 ];
-cityNames['zh_rCN'] = [];
-cityNames['zh_rTW'] = [];
+cityNames.zh_rCN = [];
+cityNames.zh_rTW = [];
 
-for (let i = 0; i < cityNames['en'].length; i++) {
+for (let i = 0; i < cityNames.en.length; i++) {
   cities.push({
     value: cityValues[i],
     label: {
-      en: cityNames['en'][i],
-      zh_rCN: cityNames['zh_rCN'][i] || '',
-      zh_rTW: cityNames['zh_rTW'][i] || '',
-    }
-  })
+      en: cityNames.en[i],
+      zh_rCN: cityNames.zh_rCN[i] || '',
+      zh_rTW: cityNames.zh_rTW[i] || '',
+    },
+  });
 }
 
 const langs = [];
@@ -85,21 +86,21 @@ const langValues = [
   'zh_rCN', 'zh_rTW', 'en',
 ];
 const langNames = {};
-langNames['en'] = [
+langNames.en = [
   'Chinese - Simplified', 'Chinese - Traditional', 'English',
 ];
-langNames['zh_rCN'] = [];
-langNames['zh_rTW'] = [];
+langNames.zh_rCN = [];
+langNames.zh_rTW = [];
 
-for (let i = 0; i < langNames['en'].length; i++) {
+for (let i = 0; i < langNames.en.length; i++) {
   langs.push({
     value: langValues[i],
     label: {
-      en: langNames['en'][i],
-      zh_rCN: langNames['zh_rCN'][i] || '',
-      zh_rTW: langNames['zh_rTW'][i] || '',
-    }
-  })
+      en: langNames.en[i],
+      zh_rCN: langNames.zh_rCN[i] || '',
+      zh_rTW: langNames.zh_rTW[i] || '',
+    },
+  });
 }
 
 const vans = [];
@@ -108,7 +109,7 @@ const vanValues = [
   'minibus', 'black-sedan',
 ];
 const vanNames = {};
-vanNames['en'] = [
+vanNames.en = [
   'Van (Alphard or Similar)',
   'Sedan (Camry or similar)',
   'Cross-border Van',
@@ -116,20 +117,20 @@ vanNames['en'] = [
   'Bus (49-person)',
 
   'Mini Bus (21-person)',
-  'Black Sedan (A6 similar)'
+  'Black Sedan (A6 similar)',
 ];
-vanNames['zh_rCN'] = [];
-vanNames['zh_rTW'] = [];
+vanNames.zh_rCN = [];
+vanNames.zh_rTW = [];
 
-for (let i = 0; i < vanNames['en'].length; i++) {
+for (let i = 0; i < vanNames.en.length; i++) {
   vans.push({
     value: vanValues[i],
     label: {
-      en: vanNames['en'][i],
-      zh_rCN: vanNames['zh_rCN'][i] || '',
-      zh_rTW: vanNames['zh_rTW'][i] || '',
-    }
-  })
+      en: vanNames.en[i],
+      zh_rCN: vanNames.zh_rCN[i] || '',
+      zh_rTW: vanNames.zh_rTW[i] || '',
+    },
+  });
 }
 
 const options = [
@@ -160,7 +161,7 @@ const names = [
 function renderQuestions(currentLanguage) {
   for (let i = 0; i < 11; i++) {
     const question = {
-      number: i+1,
+      number: i + 1,
       name: names[i],
       title: questions[currentLanguage][i] || '',
       description: descriptions[currentLanguage][i] || '',
@@ -176,7 +177,8 @@ function renderQuestions(currentLanguage) {
 
 renderQuestions('en');
 
-$registerForm = $('#register-form')
+$registerForm = $('#register-form');
+
 $registerForm.submit(() => {
   const url = $registerForm.attr('action');
   const data = $registerForm.serialize();
@@ -185,7 +187,7 @@ $registerForm.submit(() => {
   };
   const dataType = 'json';
   $.ajax({
-    type: "POST",
+    type: 'POST',
     url: url,
     data: data,
     success: success,
