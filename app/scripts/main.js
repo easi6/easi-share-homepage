@@ -1,4 +1,4 @@
-/*!
+/* !
  *
  *  Web Starter Kit
  *  Copyright 2015 Google Inc. All rights reserved.
@@ -24,7 +24,7 @@
   // and that the current page is accessed from a secure origin. Using a
   // service worker from an insecure origin will trigger JS console errors. See
   // http://www.chromium.org/Home/chromium-security/prefer-secure-origins-for-powerful-new-features
-  var isLocalhost = Boolean(window.location.hostname === 'localhost' ||
+  const isLocalhost = Boolean(window.location.hostname === 'localhost' ||
       // [::1] is the IPv6 localhost address.
       window.location.hostname === '[::1]' ||
       // 127.0.0.1/8 is considered localhost for IPv4.
@@ -36,7 +36,7 @@
   if ('serviceWorker' in navigator &&
       (window.location.protocol === 'https:' || isLocalhost)) {
     navigator.serviceWorker.register('service-worker.js')
-    .then(function(registration) {
+    .then((registration) => {
       // updatefound is fired if service-worker.js changes.
       registration.onupdatefound = function() {
         // updatefound is also fired the very first time the SW is installed,
@@ -46,28 +46,28 @@
         if (navigator.serviceWorker.controller) {
           // The updatefound event implies that registration.installing is set:
           // https://slightlyoff.github.io/ServiceWorker/spec/service_worker/index.html#service-worker-container-updatefound-event
-          var installingWorker = registration.installing;
+          const installingWorker = registration.installing;
 
           installingWorker.onstatechange = function() {
             switch (installingWorker.state) {
-              case 'installed':
-                // At this point, the old content will have been purged and the
-                // fresh content will have been added to the cache.
-                // It's the perfect time to display a "New content is
-                // available; please refresh." message in the page's interface.
-                break;
+            case 'installed':
+              // At this point, the old content will have been purged and the
+              // fresh content will have been added to the cache.
+              // It's the perfect time to display a "New content is
+              // available; please refresh." message in the page's interface.
+              break;
 
-              case 'redundant':
-                throw new Error('The installing ' +
-                                'service worker became redundant.');
+            case 'redundant':
+              throw new Error('The installing ' +
+                              'service worker became redundant.');
 
-              default:
-                // Ignore
+            default:
+              // Ignore
             }
           };
         }
       };
-    }).catch(function(e) {
+    }).catch((e) => {
       console.error('Error during service worker registration:', e);
     });
   }

@@ -153,7 +153,7 @@ const names = [
   'email',
   'login',
 
-  'language',
+  'locale',
   'base_city',
   'log_driving_record',
   'car_types',
