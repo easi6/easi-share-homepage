@@ -6,7 +6,6 @@
 body {
   height: 100%;
   padding-top: 60px;
-  min-width: 1024px;
 }
 
 html {
@@ -51,13 +50,13 @@ hr {
 .icon-cs {
   width: 22px;
   height: 22px;
+  margin-right: -24px;
 }
 
 .nav-menu-support {
   font-size: 14px;
-  color: #000000;
-  margin-left: -24px;
   margin-right: 30px;
+  color: #000000;
 }
 
 .nav-menu-login {
@@ -75,6 +74,7 @@ hr {
 
 /* Apply */
 .apply-field {
+  position: relative;
   background: url("../images/main@3x.png") no-repeat center;
   background-size: cover;
   height: 100%;
@@ -111,12 +111,13 @@ hr {
   color: #ffffff;
 }
 
-/* EMS Illust */
-.ems-illust-field {
-  height: 854px;
-  padding: inherit;
+.default-field {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 100px;
 }
 
+/* EMS Illust */
 .title_text {
   font-family: ReplicaPro;
   font-size: 26px;
@@ -135,8 +136,7 @@ hr {
 .illust-text {
   background: url("../images/ems-illust.png") no-repeat center;
   position: relative;
-  display: block;
-  width: 660px;
+  max-width: 660px;
   height: 558px;
   margin-left: auto;
   margin-right: auto;
@@ -204,10 +204,10 @@ h3 {
 }
 
 /* EMS Service */
-.ems-service-field {
-  width: 100%;
-  height: 550px;
-  padding: inherit;
+.default-field {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 100px;
 }
 
 .service-list {
@@ -218,7 +218,6 @@ h3 {
 
 .service-list > div {
   position: relative;
-  float: left;
   width: 290px;
   height: 290px;
   margin: 10px;
@@ -238,15 +237,18 @@ h3 {
 
 .ems-service-text-div {
   position: absolute;
+  left: 0;
   bottom: 0;
   padding: 20px;
+  text-align: left !important;
 }
 
 .shadow {
   position: absolute;
+  left: 0;
+  bottom: 0;
   width: 290px;
   height: 145px;
-  bottom: 0;
 }
 
 h4 {
@@ -264,14 +266,10 @@ h5 {
 }
 
 /* Benefits */
-.benefits-field {
-  height: 670px;
-  padding: inherit;
-}
-
-.benefit-horizontal-div {
-  position: absolute;
-  width: 100%;
+.default-field {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 100px;
 }
 
 .benefit-horizontal-list {
@@ -284,8 +282,14 @@ h5 {
   float: left;
   max-width: 391px;
   margin-top: 80px;
-  margin-left: 60px;
+}
+
+.benefit-box-left {
   margin-right: 60px;
+}
+
+.benefit-box-right {
+  margin-left: 60px;
 }
 
 .benefit-icon {
@@ -310,16 +314,16 @@ h7 {
 }
 
 /* Social Proof */
-.social-proof-field {
-  height: 475px;
-  padding: inherit;
+.default-field {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 100px;
 }
 
 .social-div {
   position: relative;
   display: table;
-  padding-top: 58px;
-  margin: 0 auto;
+  margin: 58px auto 0;
   text-align: center;
 }
 
@@ -332,16 +336,12 @@ h7 {
   color: #000000;
 }
 
-.social-andasun {
+.social-andasun, .social-rich {
   float: left;
-  margin-left: 85px;
-  margin-right: 100px;
-}
-
-.social-rich {
-  float: left;
-  margin-left: 100px;
-  margin-right: 85px;
+  max-width: 365px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 20px;
 }
 
 .andasun, .rich {
@@ -367,7 +367,7 @@ h7 {
 }
 
 .social-text-3 {
-  width: 265px;
+  max-width: 265px;
   margin-top: 7px;
   font-family: NanumBarunGothicOTF;
   font-size: 14px;
@@ -379,7 +379,8 @@ h7 {
 /* Apply bottom */
 .apply-bottom-field {
   position: relative;
-  height: 229px;
+  padding: 70px 10px;
+  text-align: center;
   background: #418cfa; solid-color: #418cfa;
 }
 
@@ -431,6 +432,7 @@ h7 {
   background-color: #000000;
 }
 
+/* Wechat popover */
 .popover-wechat {
   position: absolute !important;
   top: 0;
@@ -512,4 +514,166 @@ h7 {
   width: 90px;
   height: 90px;
   background: #000000;
+}
+
+/* 모바일인 경우(1000px 이하) 처리 */
+@media (max-width: 1000px) {
+  .navbar-header {
+    float: none;
+  }
+  .navbar-left, .navbar-right {
+    float: none !important;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    background: white;
+  }
+  .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+    display: none!important;
+  }
+  .navbar-nav {
+    float: none !important;
+    margin-top: 8px;
+  }
+  .navbar-nav > li {
+    float: none;
+  }
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .collapse.in{
+    display:block !important;
+  }
+
+  .nav-menu-support, .nav-menu-login .dropdown-toggle {
+    margin: 0;
+  }
+
+  .nav-cs-icon, .nav-divider1, .nav-divider2 {
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+    padding-top: 0;
+  }
+
+  .default-field {
+    margin: 0 auto;
+    max-width: 511px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .service-list > div {
+    margin: 20px auto;
+  }
+
+  .center-margin {
+    clear: left;
+    margin: 0 auto;
+  }
+
+  .social-andasun, .social-rich {
+    clear: left;
+    margin: 0 20px;
+  }
+
+  .social-andasun {
+    margin-bottom: 60px;
+  }
+
+  .illust-text {
+    background-size: 400px;
+    max-width: 360px;
+    max-height: 338px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 14px;
+  }
+
+  .illust-customer {
+    top: 107px;
+  }
+
+  .illust-driver {
+    left: 58px;
+    bottom: 18px;
+  }
+
+  .illust-manager {
+    right: 39px;
+    bottom: 18px;
+  }
+
+  .illust-serve {
+    top: 80px;
+    left: 21px;
+  }
+
+  .illust-order {
+    top: 80px;
+    right: 19px;
+  }
+
+  .benefit-horizontal-list {
+    max-width: 391px;
+  }
+
+  .benefit-box {
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* 더 작을 경우(320px 이하) 처리 */
+@media (max-width: 320px) {
+  .illust-text {
+    background-size: 355px;
+    max-width: 320px;
+    max-height: 300px;
+  }
+
+  .illust-customer {
+    top: 92px;
+  }
+
+  .illust-driver {
+    left: 38px;
+    bottom: 13px;
+  }
+
+  .illust-manager {
+    right: 19px;
+    bottom: 13px;
+  }
+
+  .illust-serve {
+    top: 80px;
+    left: 11px;
+  }
+
+  .illust-order {
+    top: 80px;
+    right: 9px;
+  }
+
+  .benefit-box {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
 }

@@ -157,8 +157,10 @@ $('a').click(function() {
     setLanguage(lang);
 });
 
+// Wechat popover
 $("[data-toggle='popover']").popover();
 
+// set default language
 setLanguage('en');
 
 /*

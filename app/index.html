@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <!-- 위 3개의 메타 태그는 *반드시* head 태그의 처음에 와야합니다; 어떤 다른 콘텐츠들은 반드시 이 태그들 *다음에* 와야 합니다 -->
   <title data-langStr="title_ems">EMS</title>
 
@@ -27,10 +27,15 @@
       <a class="navbar-brand" href="#">
         <img alt="brand" src="images/logo-ems.svg">
       </a>
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </div>
-    <div class="collapse navbar-collapse">
+    <div class="navbar-collapse collapse top-navbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><img class="icon-cs" alt="cs" src="images/icon-cs.svg"></a></li>
+        <li class="nav-cs-icon"><a href="#"><img class="icon-cs" alt="cs" src="images/icon-cs.svg"></a></li>
         <li><a class="nav-menu-support" data-langStr="txt_support" href="#">Support</a></li>
         <li><a class="nav-menu-login" data-langStr="txt_login" href="#">Login</a></li>
         <li class="nav-divider1"><div class="divider1" role="separator"></div></li>
@@ -51,14 +56,14 @@
   </div>
 </div>
 <!-- Apply -->
-<div class="apply-field">
+<div class="container-fluid apply-field">
   <div class="center-div">
     <h1 class="apply-txt" data-langStr="title_apply">Be in control</h1>
     <button class="apply-btn" data-langStr="btn_apply" href="https://www.sojump.hk/jq/13895511.aspx">APPLY NOW</button>
   </div>
 </div>
 <!-- EMS Illust -->
-<div class="ems-illust-field">
+<div class="default-field">
   <h1 class="title_text" data-langStr="txt_ems1">Easishare Management System</h1>
   <h1 class="ems-text2" data-langStr="txt_ems2">Integrated fleet management platform</h1>
   <div class="illust-text">
@@ -72,23 +77,23 @@
 </div>
 <hr>
 <!-- EMS Service -->
-<div class="ems-service-field">
+<div class="container-fluid default-field">
   <h1 class="title_text" data-langStr="title_ems_service">EMS Service</h1>
-  <div class="service-list">
-    <div class="ems-customer-box" role="button">
+  <div class="row service-list center-margin">
+    <div class="col-md-1 ems-customer-box center-margin" role="button">
       <div class="ems-service-text-div">
         <h4 data-langStr="txt_customer_title">Customer Tool & APP</h4>
         <h5 data-langStr="txt_customer_content">Create your customer's account to serve their order inputs.</h5>
       </div>
     </div>
-    <div class="ems-manager-box" role="button">
+    <div class="col-md-1 ems-manager-box center-margin" role="button">
       <img class="shadow" src="images/shadow.svg">
       <div class="ems-service-text-div">
         <h4 data-langStr="txt_manager_title">Manager Tool</h4>
         <h5 data-langStr="txt_manager_content">Manage booking. scheduling. dispatch and reservations all in one.</h5>
       </div>
     </div>
-    <div class="ems-driver-box" role="button">
+    <div class="col-md-1 ems-driver-box center-margin" role="button">
       <img class="shadow" src="images/shadow.svg">
       <div class="ems-service-text-div">
         <h4 data-langStr="txt_driver_title">Driver APP</h4>
@@ -99,28 +104,28 @@
 </div>
 <hr>
 <!-- Benefits -->
-<div class="benefits-field">
+<div class="default-field">
   <h1 class="title_text" data-langStr="title_benefits">Benefits</h1>
   <div class="benefit-horizontal-div">
     <div class="benefit-horizontal-list">
-      <div class="benefit-box">
+      <div class="benefit-box benefit-box-left">
         <img class="benefit-icon" src="images/icon-survive.svg">
         <h6 data-langStr="txt_survive_title">Survive!</h6>
         <h7 data-langStr="txt_survive_content">Get more business with same fleet size by exchanging orders with other suppliers</h7>
       </div>
-      <div class="benefit-box">
+      <div class="benefit-box benefit-box-right">
         <img class="benefit-icon" src="images/icon-moreorder.svg">
         <h6 data-langStr="txt_moreorder_title">More Order!</h6>
         <h7 data-langStr="txt_moreorder_content">Get more order from other booking apps and OTAs connected to EMS</h7>
       </div>
     </div>
     <div class="benefit-horizontal-list">
-      <div class="benefit-box">
+      <div class="benefit-box benefit-box-left">
         <img class="benefit-icon" src="images/icon-ownit.svg">
         <h6 data-langStr="txt_ownit_title">Own it!</h6>
         <h7 data-langStr="txt_ownit_content">Get manager tool, customer and driver mobile application with your brand on it</h7>
       </div>
-      <div class="benefit-box">
+      <div class="benefit-box benefit-box-right">
         <img class="benefit-icon" src="images/icon-win.svg">
         <h6 data-langStr="txt_win_title">Win!</h6>
         <h7 data-langStr="txt_win_content">Going into bidding? Take secure cloud-based EMS with you to win</h7>
@@ -130,11 +135,11 @@
 </div>
 <hr>
 <!-- Social Proof -->
-<div class="social-proof-field">
+<div class="container-fluid default-field">
   <h1 class="title_text" data-langStr="title_social_proof">Social Proof</h1>
   <div class="social-div">
-    <div class="quotation fa-quote-left" aria-hidden="true"></div>
     <div class="social-andasun">
+      <div class="quotation fa-quote-left" aria-hidden="true"></div>
       <div class="andasun"></div>
       <div class="social-text-1" data-langStr="txt_andasun">Andasun</div>
       <div class="social-text-2" data-langStr="txt_manager">Manager</div>
@@ -150,10 +155,8 @@
 </div>
 <!-- Apply bottom -->
 <div class="apply-bottom-field">
-  <div class="center-div">
-    <div class="apply-content-text" data-langStr="txt_apply_bottom_content">Eliminate trivial tasks with EMS to focus on things that matters most</div>
-    <button class="apply-btn" data-langStr="btn_apply" href="https://www.sojump.hk/jq/13895511.aspx">APPLY NOW</button>
-  </div>
+  <div class="apply-content-text" data-langStr="txt_apply_bottom_content">Eliminate trivial tasks with EMS to focus on things that matters most</div>
+  <button class="apply-btn" data-langStr="btn_apply" href="https://www.sojump.hk/jq/13895511.aspx">APPLY NOW</button>
 </div>
 <!-- ICP -->
 <div class="icp-field">
@@ -166,8 +169,13 @@
       <a class="navbar-brand" href="#">
         <img alt="Brand" src="images/logo-easi-6.svg">
       </a>
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bottom-navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </div>
-    <div class="collapse navbar-collapse">
+    <div class="collapse navbar-collaps bottom-navbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a class="nav-menu-policy" data-langStr="txt_terms_policy" href="#">Terms & Policy</a></li>
         <li><a><div class="divider2" role="separator"></div></a></li>
