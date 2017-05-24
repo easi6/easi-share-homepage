@@ -361,7 +361,16 @@ h7 {
   margin: 0 auto;
   width: 66px;
   height: 66px;
-  border: 1px solid;
+}
+
+.andasun {
+  background: url("../images/ads-profile@3x.png") no-repeat center;
+  background-size: cover;
+}
+
+.rich {
+  background: url("../images/rich-profile@3x.png") no-repeat center;
+  background-size: cover;
 }
 
 .social-text-1 {
