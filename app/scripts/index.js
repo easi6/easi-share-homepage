@@ -2,7 +2,8 @@
  * Created by klsayhtg on 2017. 5. 16..
  */
 
-let currentLanguage = 'zh_rCN';
+const savedLang = Cookies.get('lang');
+let currentLanguage = savedLang ? savedLang : 'zh_rCN';
 
 const applyBottomTemplate = nunjucks.render('apply-bottom.html', {});
 $('#main, #customer, #manager, #driver').append(applyBottomTemplate);
@@ -51,6 +52,7 @@ function setBottomIcons(lang) {
 // 언어 변경
 $('.lang-selector').click((evt) => {
   const lang = $(evt.target).data('lang');
+  Cookies.set('lang', lang);
   setLanguage(lang);
 });
 
