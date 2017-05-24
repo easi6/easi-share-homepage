@@ -108,12 +108,20 @@ hr {
 }
 
 .apply-btn {
+  display: inline-block;
   width: 112px;
   height: 36px;
+  line-height: 36px;
+  text-decoration: none;
   background: transparent;
   border: solid 1px #ffffff;
   font-size: 14px;
   color: #ffffff;
+  &:hover {
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #4ba1ff;
+  }
 }
 
 .default-field {
