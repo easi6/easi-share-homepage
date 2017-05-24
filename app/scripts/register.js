@@ -185,7 +185,6 @@ function renderQuestions(selectedLanguage) {
 renderQuestions(currentLanguage);
 
 const $registerForm = $('#register-form');
-const $csrfField = $('#csrf');
 
 function showErrorMessage(name) {
   const matcher = `#${name}-qa-box .register-a-err`;
@@ -232,18 +231,3 @@ $registerForm.submit(() => {
   });
   return false;
 });
-
-function getCsrfToken() {
-  $.ajax({
-    type: 'GET',
-    url: 'http://api.easixing.dev:9000/companies/signup_csrf',
-    xhrFields: {
-      withCredentials: true,
-    },
-    success: (res, status, xhr) => {
-      $csrfField.val(res);
-    },
-  });
-}
-
-getCsrfToken();
