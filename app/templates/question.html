@@ -8,13 +8,13 @@
   </div>
   <div class="register-a-box">
     {% if type == 'text' %}
-      <input type="text" class="register-a-text-field" name="{{name}}" {% if required %} required="true" {% endif %} />
+      <input type="text" class="register-a-text-field" name="{{name}}" {% if required %} required="required" {% endif %} />
     {% elif type == 'email' %}
-      <input type="email" class="register-a-text-field" name="{{name}}" {% if required %} required="true" {% endif %} />
+      <input type="email" class="register-a-text-field" name="{{name}}" {% if required %} required="required" {% endif %} />
     {% elif type == 'radio' %}
       {% for option in options %}
         <div class="register-radio-option custom-radio">
-          <input type="radio" value="{{option.value}}" id="radio-{{name}}-{{option.value}}" name="{{name}}" {% if required %} required="true" {% endif %} />
+          <input type="radio" value="{{option.value}}" id="radio-{{name}}-{{option.value}}" name="{{name}}" {% if required %} required="required" {% endif %} />
           <label for="radio-{{name}}-{{option.value}}" data-langstr="register_option_{{option.name}}_{{option.value}}"></label>
         </div>
       {% endfor %}
