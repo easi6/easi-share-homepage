@@ -5,7 +5,8 @@ module.exports = {
   "globals": {
     "$": false,
     "_": false,
-    "nunjucks": false
+    "nunjucks": false,
+    "Cookies": false
   },
   "parser": "babel-eslint",
   "rules": {

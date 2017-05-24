@@ -84,6 +84,22 @@ gulp.task('copy', () => {
     }).pipe(plumber())
       .pipe(gulp.dest('dist/vendors'))
       .pipe($.size({title: 'copyVendor'}));
+
+    gulp.src([
+      'app/css/*'
+    ], {
+      dot: true
+    }).pipe(plumber())
+      .pipe(gulp.dest('dist/css'))
+      .pipe($.size({title: 'copyVendorCss'}));
+
+    gulp.src([
+      'app/fonts/**/*'
+    ], {
+      dot: true
+    }).pipe(plumber())
+      .pipe(gulp.dest('dist/fonts'))
+      .pipe($.size({title: 'copyVendorFonts'}));
   }
 );
 
@@ -130,8 +146,9 @@ gulp.task('scripts', () =>
       // Note: Since we are not using useref in the scripts build pipeline,
       //       you need to explicitly list your scripts here in the right order
       //       to be correctly concatenated
-      './app/scripts/main.js'
-      // Other scripts
+      './app/scripts/main.js',
+      './app/scripts/translations.js',
+      './app/scripts/index.js',
     ])
       .pipe(plumber())
       .pipe($.newer('.tmp/scripts'))
@@ -228,7 +245,7 @@ gulp.task('serve:dist', ['default'], () =>
 gulp.task('default', ['clean'], cb =>
   runSequence(
     'styles',
-    ['lint', 'html', 'scripts', 'images', 'copy'],
+    ['lint', 'html', 'scripts', 'images', 'copy', 'nunjucks'],
     'generate-service-worker',
     cb
   )

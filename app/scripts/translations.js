@@ -93,7 +93,7 @@ $.lang.zh_rCN = {
   txt_register_title: 'EMS易智行车辆管理系统',
   txt_register_title_desc: '如需注册易智行车辆管理系统，请如实填写以下信息，谢谢！',
   register_confirm_btn: '提交',
-  register_succeed: 'Thank you! We will be in touch shortly.',
+  register_succeed: '谢谢！我们会尽快联系您。',
 };
 
 $.lang.zh_rTW = {
