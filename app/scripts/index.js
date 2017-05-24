@@ -5,6 +5,11 @@
 const savedLang = Cookies.get('lang');
 let currentLanguage = savedLang ? savedLang : 'zh_rCN';
 
+const firstHash = window.location.hash;
+if (firstHash !== "" && firstHash != null) {
+  $($(`[href='${firstHash}']`)[0]).tab('show');
+}
+
 const applyBottomTemplate = nunjucks.render('apply-bottom.html', {});
 $('#main, #customer, #manager, #driver').append(applyBottomTemplate);
 
@@ -60,7 +65,10 @@ $('.lang-selector').click((evt) => {
 $('[data-toggle=\'popover\']').popover();
 
 // 탭 이동
-$('[data-toggle=\'tab\']').click(() => {
+$('[data-toggle=\'tab\']').click((evt) => {
+  evt.preventDefault();
+  const $target = $(evt.currentTarget);
+  location.href = '/'+$target.attr('href');
   $('html, body').animate({
     scrollTop: 0,
   }, 600);
@@ -70,7 +78,6 @@ $('[data-toggle=\'tab\']').click(() => {
  추가적으로 유용한 처리.
  1. 브라우저 언어에 따라 최초 언어 셋팅하기
  2. 외부에서 URL ?lang=ja 접근시 셋팅하기
- 3. 언어 변경시 쿠키에 언어코드 저장해서 재접속시 쿠키 기준으로 언어 셋팅.
  */
 
 const questions = {};
