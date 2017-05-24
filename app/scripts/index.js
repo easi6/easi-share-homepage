@@ -159,6 +159,11 @@ $('a').click(function() {
 // Wechat popover
 $('[data-toggle=\'popover\']').popover();
 
+// 탭 이동
+$('[data-toggle=\'tab\']').click(function() {
+  document.getElementById('top-view').scrollIntoView();
+});
+
 // set default language
 setLanguage('en');
 

@@ -21,10 +21,10 @@
 </head>
 <body>
 <!-- NavBar -->
-<div class="navbar-ems navbar-default navbar-fixed-top" role="navigation">
+<div class="navbar-ems navbar-default navbar-fixed-top" role="navigation" id="top-view">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" role="tab" data-toggle="tab" data-target="#main" href="#main">
         <img alt="brand" src="images/logo-ems.svg">
       </a>
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".top-navbar">
@@ -55,175 +55,541 @@
     </div>
   </div>
 </div>
-<!-- Apply -->
-<div class="container-fluid apply-field">
-  <div class="center-div">
-    <h1 class="apply-txt" data-langStr="title_apply">Be in control</h1>
-    <button class="apply-btn" data-langStr="btn_apply" href="https://www.sojump.hk/jq/13895511.aspx">APPLY NOW</button>
-  </div>
-</div>
-<!-- EMS Illust -->
-<div class="default-field">
-  <h1 class="title_text" data-langStr="txt_ems1">Easishare Management System</h1>
-  <h1 class="ems-text2" data-langStr="txt_ems2">Integrated fleet management platform</h1>
-  <div class="illust-text">
-    <h2 class="illust-customer" data-langStr="txt_ems_customer">CUSTOMER</h2>
-    <h2 class="illust-driver" data-langStr="txt_ems_driver">DRIVER</h2>
-    <h2 class="illust-manager" data-langStr="txt_ems_manager">MANAGER</h2>
-    <h3 class="illust-serve" data-langStr="txt_serve">Serve</h3>
-    <h3 class="illust-order" data-langStr="txt_order">Order</h3>
-    <h3 class="illust-dispatch" data-langStr="txt_dispatch">Dispatch</h3>
-  </div>
-</div>
-<hr>
-<!-- EMS Service -->
-<div class="container-fluid default-field">
-  <h1 class="title_text" data-langStr="title_ems_service">EMS Service</h1>
-  <div class="row service-list center-margin">
-    <div class="col-md-1 ems-customer-box center-margin" role="button">
-      <div class="ems-service-text-div">
-        <h4 data-langStr="txt_customer_title">Customer Tool & APP</h4>
-        <h5 data-langStr="txt_customer_content">Create your customer's account to serve their order inputs.</h5>
+<!-- Tab -->
+<div id="myTabContent" class="tab-content">
+  <!-- Main Tap -->
+  <div class="tab-pane fade active in" role="tabpanel" id="main">
+    <!-- Apply -->
+    <div class="container-fluid apply-field">
+      <div class="center-div">
+        <h1 class="apply-txt" data-langStr="title_apply">Be in control</h1>
+        <button class="apply-btn" data-langStr="btn_apply" href="https://www.sojump.hk/jq/13895511.aspx">APPLY NOW</button>
       </div>
     </div>
-    <div class="col-md-1 ems-manager-box center-margin" role="button">
-      <img class="shadow" src="images/shadow.svg">
-      <div class="ems-service-text-div">
-        <h4 data-langStr="txt_manager_title">Manager Tool</h4>
-        <h5 data-langStr="txt_manager_content">Manage booking. scheduling. dispatch and reservations all in one.</h5>
+    <!-- EMS Illust -->
+    <div class="default-field">
+      <h1 class="title_text" data-langStr="txt_ems1">Easishare Management System</h1>
+      <h1 class="ems-text2" data-langStr="txt_ems2">Integrated fleet management platform</h1>
+      <div class="illust-text">
+        <h2 class="illust-customer" data-langStr="txt_ems_customer">CUSTOMER</h2>
+        <h2 class="illust-driver" data-langStr="txt_ems_driver">DRIVER</h2>
+        <h2 class="illust-manager" data-langStr="txt_ems_manager">MANAGER</h2>
+        <h3 class="illust-serve" data-langStr="txt_serve">Serve</h3>
+        <h3 class="illust-order" data-langStr="txt_order">Order</h3>
+        <h3 class="illust-dispatch" data-langStr="txt_dispatch">Dispatch</h3>
       </div>
     </div>
-    <div class="col-md-1 ems-driver-box center-margin" role="button">
-      <img class="shadow" src="images/shadow.svg">
-      <div class="ems-service-text-div">
-        <h4 data-langStr="txt_driver_title">Driver APP</h4>
-        <h5 data-langStr="txt_driver_content">Dispatch rides and track ride progress real time.</h5>
+    <hr>
+    <!-- EMS Service -->
+    <div class="container-fluid default-field">
+      <h1 class="title_text" data-langStr="title_ems_service">EMS Service</h1>
+      <div class="row service-list center-margin">
+        <div class="col-md-1 ems-customer-box center-margin" role="button" data-tab="customer" href="#customer" data-toggle="tab">
+          <div class="ems-service-text-div">
+            <h4 data-langStr="txt_customer_title">Customer Tool & APP</h4>
+            <h5 data-langStr="txt_customer_content">Create your customer's account to serve their order inputs.</h5>
+          </div>
+        </div>
+        <div class="col-md-1 ems-manager-box center-margin" role="button" data-tab="manager" href="#manager" data-toggle="tab">
+          <img class="shadow" src="images/shadow.svg">
+          <div class="ems-service-text-div">
+            <h4 data-langStr="txt_manager_title">Manager Tool</h4>
+            <h5 data-langStr="txt_manager_content">Manage booking. scheduling. dispatch and reservations all in one.</h5>
+          </div>
+        </div>
+        <div class="col-md-1 ems-driver-box center-margin" role="button" data-tab="driver" href="#driver" data-toggle="tab">
+          <img class="shadow" src="images/shadow.svg">
+          <div class="ems-service-text-div">
+            <h4 data-langStr="txt_driver_title">Driver APP</h4>
+            <h5 data-langStr="txt_driver_content">Dispatch rides and track ride progress real time.</h5>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<hr>
-<!-- Benefits -->
-<div class="default-field">
-  <h1 class="title_text" data-langStr="title_benefits">Benefits</h1>
-  <div class="benefit-horizontal-div">
-    <div class="benefit-horizontal-list">
-      <div class="benefit-box benefit-box-left">
-        <img class="benefit-icon" src="images/icon-survive.svg">
-        <h6 data-langStr="txt_survive_title">Survive!</h6>
-        <h7 data-langStr="txt_survive_content">Get more business with same fleet size by exchanging orders with other suppliers</h7>
+    <hr>
+    <!-- Benefits -->
+    <div class="default-field">
+      <h1 class="title_text" data-langStr="title_benefits">Benefits</h1>
+      <div class="benefit-horizontal-div">
+        <div class="benefit-horizontal-list">
+          <div class="benefit-box benefit-box-left">
+            <img class="benefit-icon" src="images/icon-survive.svg">
+            <h6 data-langStr="txt_survive_title">Survive!</h6>
+            <h7 data-langStr="txt_survive_content">Get more business with same fleet size by exchanging orders with other suppliers</h7>
+          </div>
+          <div class="benefit-box benefit-box-right">
+            <img class="benefit-icon" src="images/icon-moreorder.svg">
+            <h6 data-langStr="txt_moreorder_title">More Order!</h6>
+            <h7 data-langStr="txt_moreorder_content">Get more order from other booking apps and OTAs connected to EMS</h7>
+          </div>
+        </div>
+        <div class="benefit-horizontal-list">
+          <div class="benefit-box benefit-box-left">
+            <img class="benefit-icon" src="images/icon-ownit.svg">
+            <h6 data-langStr="txt_ownit_title">Own it!</h6>
+            <h7 data-langStr="txt_ownit_content">Get manager tool, customer and driver mobile application with your brand on it</h7>
+          </div>
+          <div class="benefit-box benefit-box-right">
+            <img class="benefit-icon" src="images/icon-win.svg">
+            <h6 data-langStr="txt_win_title">Win!</h6>
+            <h7 data-langStr="txt_win_content">Going into bidding? Take secure cloud-based EMS with you to win</h7>
+          </div>
+        </div>
       </div>
-      <div class="benefit-box benefit-box-right">
-        <img class="benefit-icon" src="images/icon-moreorder.svg">
-        <h6 data-langStr="txt_moreorder_title">More Order!</h6>
-        <h7 data-langStr="txt_moreorder_content">Get more order from other booking apps and OTAs connected to EMS</h7>
+    </div>
+    <hr>
+    <!-- Social Proof -->
+    <div class="container-fluid default-field">
+      <h1 class="title_text" data-langStr="title_social_proof">Social Proof</h1>
+      <div class="social-div">
+        <div class="social-andasun">
+          <div class="quotation fa-quote-left" aria-hidden="true"></div>
+          <div class="andasun"></div>
+          <div class="social-text-1" data-langStr="txt_andasun">Andasun</div>
+          <div class="social-text-2" data-langStr="txt_manager">Manager</div>
+          <div class="social-text-3" data-langStr="txt_andasun_content">“It’s easy and boost work efficiency. We no longer have to make multiple phone calls or search through documents to find an available driver.”</div>
+        </div>
+        <div class="social-rich">
+          <div class="rich"></div>
+          <div class="social-text-1" data-langStr="txt_rich">Rich Pacific International</div>
+          <div class="social-text-2" data-langStr="txt_manager">Manager</div>
+          <div class="social-text-3" data-langStr="txt_rich_content">“We love how we can track where the drivers are to make sure they are in time for pickup. With this tool, we can provide better service.”</div>
+        </div>
       </div>
     </div>
-    <div class="benefit-horizontal-list">
-      <div class="benefit-box benefit-box-left">
-        <img class="benefit-icon" src="images/icon-ownit.svg">
-        <h6 data-langStr="txt_ownit_title">Own it!</h6>
-        <h7 data-langStr="txt_ownit_content">Get manager tool, customer and driver mobile application with your brand on it</h7>
-      </div>
-      <div class="benefit-box benefit-box-right">
-        <img class="benefit-icon" src="images/icon-win.svg">
-        <h6 data-langStr="txt_win_title">Win!</h6>
-        <h7 data-langStr="txt_win_content">Going into bidding? Take secure cloud-based EMS with you to win</h7>
-      </div>
+    <!-- Apply bottom -->
+    <div class="apply-bottom-field">
+      <div class="apply-content-text" data-langStr="txt_apply_bottom_content">Eliminate trivial tasks with EMS to focus on things that matters most</div>
+      <button class="apply-btn" data-langStr="btn_apply" href="https://www.sojump.hk/jq/13895511.aspx">APPLY NOW</button>
     </div>
-  </div>
-</div>
-<hr>
-<!-- Social Proof -->
-<div class="container-fluid default-field">
-  <h1 class="title_text" data-langStr="title_social_proof">Social Proof</h1>
-  <div class="social-div">
-    <div class="social-andasun">
-      <div class="quotation fa-quote-left" aria-hidden="true"></div>
-      <div class="andasun"></div>
-      <div class="social-text-1" data-langStr="txt_andasun">Andasun</div>
-      <div class="social-text-2" data-langStr="txt_manager">Manager</div>
-      <div class="social-text-3" data-langStr="txt_andasun_content">“It’s easy and boost work efficiency. We no longer have to make multiple phone calls or search through documents to find an available driver.”</div>
+    <!-- ICP -->
+    <div class="icp-field">
+      <div class="icp-content-text" data-langStr="txt_icp">粤ICP备17020336号粤公网安备 44030402000541号<br>© 2017 深圳易智顺顺科技有限公司 Easi6 Limited. All Rights Reserved.</div>
     </div>
-    <div class="social-rich">
-      <div class="rich"></div>
-      <div class="social-text-1" data-langStr="txt_rich">Rich Pacific International</div>
-      <div class="social-text-2" data-langStr="txt_manager">Manager</div>
-      <div class="social-text-3" data-langStr="txt_rich_content">“We love how we can track where the drivers are to make sure they are in time for pickup. With this tool, we can provide better service.”</div>
-    </div>
-  </div>
-</div>
-<!-- Apply bottom -->
-<div class="apply-bottom-field">
-  <div class="apply-content-text" data-langStr="txt_apply_bottom_content">Eliminate trivial tasks with EMS to focus on things that matters most</div>
-  <button class="apply-btn" data-langStr="btn_apply" href="https://www.sojump.hk/jq/13895511.aspx">APPLY NOW</button>
-</div>
-<!-- ICP -->
-<div class="icp-field">
-  <div class="icp-content-text" data-langStr="txt_icp">粤ICP备17020336号粤公网安备 44030402000541号<br>© 2017 深圳易智顺顺科技有限公司 Easi6 Limited. All Rights Reserved.</div>
-</div>
-<!-- Bottom NavBar -->
-<!-- default -->
-<div class="navbar-easi6 default-nav navbar-default" role="navigation">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        <img alt="Brand" src="images/logo-easi-6.svg">
-      </a>
-    </div>
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a class="nav-menu-policy bottom-nav-text" data-langStr="txt_terms_policy" href="#">Terms & Policy</a></li>
-        <li><a><div class="divider2" role="separator"></div></a></li>
-        <li><a class="nav-menu-email bottom-nav-text" data-langStr="txt_easi_way_email" href="#">info@easi-way.com</a></li>
-        <li>
-          <a>
-            <img class="nav-icon" role="button" alt="wechat"
-                  data-template=
-                    '<div class="popover-wechat" rule="tooltip">
+    <!-- Bottom NavBar -->
+    <!-- default -->
+    <div class="navbar-easi6 default-nav navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img alt="Brand" src="images/logo-easi-6.svg">
+          </a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="nav-menu-policy bottom-nav-text" data-langStr="txt_terms_policy" href="#">Terms & Policy</a></li>
+            <li><a><div class="divider2" role="separator"></div></a></li>
+            <li><a class="nav-menu-email bottom-nav-text" data-langStr="txt_easi_way_email" href="#">info@easi-way.com</a></li>
+            <li>
+              <a>
+                <img class="nav-icon" role="button" alt="wechat"
+                     data-template=
+                       '<div class="popover-wechat" rule="tooltip">
                 <div class="arrow"></div>
                 <div class="popover-wechat-id" data-langStr="txt_wechat_id">Wechat ID : T4012399921</div>
                 <div class="popover-wechat-content" data-langStr="txt_wechat_content">asdf</div>
                 <div class="popover-wechat-qr"></div>
               </div>' data-toggle="popover" data-placement="top" data-content=" " src="images/wechat.svg">
+              </a>
+            </li>
+            <li><a href="#"><img class="nav-icon" alt="facebook" src="images/facebook.svg"></a></li>
+            <li><a href="#"><img class="nav-icon" alt="instagram" src="images/instagram@3x.png"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- mobile -->
+    <div class="navbar-easi6 mobile-nav navbar-default navbar-fixed-bottom" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img alt="Brand" src="images/logo-easi-6.svg">
           </a>
-        </li>
-        <li><a href="#"><img class="nav-icon" alt="facebook" src="images/facebook.svg"></a></li>
-        <li><a href="#"><img class="nav-icon" alt="instagram" src="images/instagram@3x.png"></a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-<!-- mobile -->
-<div class="navbar-easi6 mobile-nav navbar-default navbar-fixed-bottom" role="navigation">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        <img alt="Brand" src="images/logo-easi-6.svg">
-      </a>
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bottom-navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <div class="collapse navbar-collapse bottom-navbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a class="nav-menu-policy bottom-nav-text" data-langStr="txt_terms_policy" href="#">Terms & Policy</a></li>
-        <li><a class="nav-menu-email bottom-nav-text" data-langStr="txt_easi_way_email" href="#">info@easi-way.com</a></li>
-        <li>
-          <a><img class="nav-icon" role="button" alt="wechat"
-            data-template=
-              '<div class="popover-wechat" rule="tooltip">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bottom-navbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse bottom-navbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="nav-menu-policy bottom-nav-text" data-langStr="txt_terms_policy" href="#">Terms & Policy</a></li>
+            <li><a class="nav-menu-email bottom-nav-text" data-langStr="txt_easi_way_email" href="#">info@easi-way.com</a></li>
+            <li>
+              <a><img class="nav-icon" role="button" alt="wechat"
+                      data-template=
+                        '<div class="popover-wechat" rule="tooltip">
                 <div class="arrow"></div>
                 <div class="popover-wechat-id" data-langStr="txt_wechat_id">Wechat ID : T4012399921</div>
                 <div class="popover-wechat-content" data-langStr="txt_wechat_content">asdf</div>
                 <div class="popover-wechat-qr"></div>
               </div>' data-toggle="popover" data-placement="top" data-content=" " src="images/wechat.svg"></a>
-        </li>
-        <li><a href="#"><img class="nav-icon" alt="facebook" src="images/facebook.svg"></a></li>
-        <li><a href="#"><img class="nav-icon" alt="instagram" src="images/instagram@3x.png"></a></li>
-      </ul>
+            </li>
+            <li><a href="#"><img class="nav-icon" alt="facebook" src="images/facebook.svg"></a></li>
+            <li><a href="#"><img class="nav-icon" alt="instagram" src="images/instagram@3x.png"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Customer -->
+  <div class="tab-pane fade" role="tabpanel" id="customer">
+    <!-- Apply -->
+    <div class="container-fluid customer-main-field">
+      <div class="breadcrumb-list breadcrumb-font">
+        <a class="breadcrumb-font" data-langStr="text_home" style="font-weight: normal;" role="button" data-tab="main" href="#main" data-toggle="tab">Home</a>
+        <img class="breadcrumb-arrow" src="images/arrow.svg">
+        <div class="breadcrumb-font" data-langStr="title_main_customer">Customer Tool & APP</div>
+      </div>
+      <div class="center-div">
+        <div class="ems-service-main-title-text" data-langStr="title_main_customer">Customer Tool & APP</div>
+        <div class="ems-service-main-subtitle-text" data-langStr="subtitle_main_customer">Keep your own customers satisfied</div>
+      </div>
+      <img class="scroll-icn" src="images/img-scrolldown.svg">
+    </div>
+    <div class="container-fluid customer-1-field content-field">
+      <div class="center-div" style="top: 20%">
+        <div class="ems-service-title-text" data-langStr="title_customer_1">Easy Booking</div>
+        <div class="ems-service-subtitle-text" data-langStr="subtitle_customer_1">Create your customer’s account on the manager tool and let them book a ride easily.</div>
+      </div>
+    </div>
+    <div class="container-fluid customer-2-field content-field">
+      <div class="center-div" style="top: 20%">
+        <div class="ems-service-title-text" data-langStr="title_customer_2">Accurate Info</div>
+        <div class="ems-service-subtitle-text" data-langStr="subtitle_customer_2">Let customers be updated with all info to get them to their destination.</div>
+      </div>
+    </div>
+    <div class="container-fluid customer-3-field content-field">
+      <div class="center-div" style="top: 20%">
+        <div class="ems-service-title-text" data-langStr="title_customer_3">Track Usage</div>
+        <div class="ems-service-subtitle-text" data-langStr="subtitle_customer_3">Allows your customer to track usage of their ride.</div>
+      </div>
+    </div>
+    <div class="container-fluid customer-4-field content-field">
+      <div class="center-div" style="top: 20%">
+        <div class="ems-service-title-text" data-langStr="title_customer_4">Simple Payment</div>
+        <div class="ems-service-subtitle-text" data-langStr="subtitle_customer_4">The system automatically list bills so handling transactions with you is convenient.</div>
+      </div>
+    </div>
+    <div class="container-fluid customer-5-field content-field">
+      <div class="center-div" style="top: 20%">
+        <div class="ems-service-title-text" data-langStr="title_customer_5">Designed for corporate customer (Coming Soon)</div>
+        <div class="ems-service-subtitle-text" data-langStr="subtitle_customer_5">Allows corporate customers to request for reimbursements to their managers.</div>
+      </div>
+    </div>
+    <!-- Apply bottom -->
+    <div class="apply-bottom-field">
+      <div class="apply-content-text" data-langStr="txt_apply_bottom_content">Eliminate trivial tasks with EMS to focus on things that matters most</div>
+      <button class="apply-btn" data-langStr="btn_apply" href="https://www.sojump.hk/jq/13895511.aspx">APPLY NOW</button>
+    </div>
+    <!-- ICP -->
+    <div class="icp-field">
+      <div class="icp-content-text" data-langStr="txt_icp">粤ICP备17020336号粤公网安备 44030402000541号<br>© 2017 深圳易智顺顺科技有限公司 Easi6 Limited. All Rights Reserved.</div>
+    </div>
+    <!-- Bottom NavBar -->
+    <!-- default -->
+    <div class="navbar-easi6 default-nav navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img alt="Brand" src="images/logo-easi-6.svg">
+          </a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="nav-menu-policy bottom-nav-text" data-langStr="txt_terms_policy" href="#">Terms & Policy</a></li>
+            <li><a><div class="divider2" role="separator"></div></a></li>
+            <li><a class="nav-menu-email bottom-nav-text" data-langStr="txt_easi_way_email" href="#">info@easi-way.com</a></li>
+            <li>
+              <a>
+                <img class="nav-icon" role="button" alt="wechat"
+                     data-template=
+                       '<div class="popover-wechat" rule="tooltip">
+                <div class="arrow"></div>
+                <div class="popover-wechat-id" data-langStr="txt_wechat_id">Wechat ID : T4012399921</div>
+                <div class="popover-wechat-content" data-langStr="txt_wechat_content">asdf</div>
+                <div class="popover-wechat-qr"></div>
+              </div>' data-toggle="popover" data-placement="top" data-content=" " src="images/wechat.svg">
+              </a>
+            </li>
+            <li><a href="#"><img class="nav-icon" alt="facebook" src="images/facebook.svg"></a></li>
+            <li><a href="#"><img class="nav-icon" alt="instagram" src="images/instagram@3x.png"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- mobile -->
+    <div class="navbar-easi6 mobile-nav navbar-default navbar-fixed-bottom" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img alt="Brand" src="images/logo-easi-6.svg">
+          </a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bottom-navbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse bottom-navbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="nav-menu-policy bottom-nav-text" data-langStr="txt_terms_policy" href="#">Terms & Policy</a></li>
+            <li><a class="nav-menu-email bottom-nav-text" data-langStr="txt_easi_way_email" href="#">info@easi-way.com</a></li>
+            <li>
+              <a><img class="nav-icon" role="button" alt="wechat"
+                      data-template=
+                        '<div class="popover-wechat" rule="tooltip">
+                <div class="arrow"></div>
+                <div class="popover-wechat-id" data-langStr="txt_wechat_id">Wechat ID : T4012399921</div>
+                <div class="popover-wechat-content" data-langStr="txt_wechat_content">asdf</div>
+                <div class="popover-wechat-qr"></div>
+              </div>' data-toggle="popover" data-placement="top" data-content=" " src="images/wechat.svg"></a>
+            </li>
+            <li><a href="#"><img class="nav-icon" alt="facebook" src="images/facebook.svg"></a></li>
+            <li><a href="#"><img class="nav-icon" alt="instagram" src="images/instagram@3x.png"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Manager -->
+  <div class="tab-pane fade" role="tabpanel" id="manager">
+    <!-- Apply -->
+    <div class="container-fluid manager-main-field">
+      <div class="breadcrumb-list breadcrumb-font">
+        <a class="breadcrumb-font" data-langStr="text_home" style="font-weight: normal;" role="button" data-tab="main" href="#main" data-toggle="tab">Home</a>
+        <img class="breadcrumb-arrow" src="images/arrow.svg">
+        <div class="breadcrumb-font" data-langStr="title_main_manager">Manager tool</div>
+      </div>
+      <div class="center-div">
+        <div class="ems-service-main-title-text" data-langStr="title_main_manager">Manager tool</div>
+        <div class="ems-service-main-subtitle-text" data-langStr="subtitle_main_manager">All in One Fleet Management System</div>
+      </div>
+      <img class="scroll-icn" src="images/img-scrolldown.svg">
+    </div>
+    <div class="container-fluid manager-1-field content-field">
+      <div class="center-div" style="top: 20%">
+        <div class="ems-service-title-text" data-langStr="title_manager_1">Easy to Manage</div>
+        <div class="ems-service-subtitle-text" data-langStr="subtitle_manager_1">Take or create new order and assign available drivers and vehicle in a few clicks.</div>
+      </div>
+    </div>
+    <div class="container-fluid manager-2-field content-field">
+      <div class="center-div" style="top: 20%">
+        <div class="ems-service-title-text" data-langStr="title_manager_2">Be Alert</div>
+        <div class="ems-service-subtitle-text" data-langStr="subtitle_manager_2">Track where drivers and vehicles are real-time.</div>
+      </div>
+    </div>
+    <div class="container-fluid manager-3-field content-field">
+      <div class="center-div" style="top: 20%">
+        <div class="ems-service-title-text" data-langStr="title_manager_3">Be Flexible</div>
+        <div class="ems-service-subtitle-text" data-langStr="subtitle_manager_3">Check driver's request of expense</div>
+      </div>
+    </div>
+    <div class="container-fluid manager-4-field content-field">
+      <div class="center-div" style="top: 20%">
+        <div class="ems-service-title-text" data-langStr="title_manager_4">Keep Them Happy</div>
+        <div class="ems-service-subtitle-text" data-langStr="subtitle_manager_4">Retain your loyal customers. Create accounts for them and they can make reservations on a white labelled booking mobile application and web tool.</div>
+      </div>
+    </div>
+    <div class="container-fluid manager-5-field content-field">
+      <div class="center-div" style="top: 20%">
+        <div class="ems-service-title-text" data-langStr="title_manager_5">More Income</div>
+        <div class="ems-service-subtitle-text" data-langStr="subtitle_manager_5">Exchange orders with partnering suppliers. Make your business bigger with the same fleet size.</div>
+      </div>
+    </div>
+    <!-- Apply bottom -->
+    <div class="apply-bottom-field">
+      <div class="apply-content-text" data-langStr="txt_apply_bottom_content">Eliminate trivial tasks with EMS to focus on things that matters most</div>
+      <button class="apply-btn" data-langStr="btn_apply" href="https://www.sojump.hk/jq/13895511.aspx">APPLY NOW</button>
+    </div>
+    <!-- ICP -->
+    <div class="icp-field">
+      <div class="icp-content-text" data-langStr="txt_icp">粤ICP备17020336号粤公网安备 44030402000541号<br>© 2017 深圳易智顺顺科技有限公司 Easi6 Limited. All Rights Reserved.</div>
+    </div>
+    <!-- Bottom NavBar -->
+    <!-- default -->
+    <div class="navbar-easi6 default-nav navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img alt="Brand" src="images/logo-easi-6.svg">
+          </a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="nav-menu-policy bottom-nav-text" data-langStr="txt_terms_policy" href="#">Terms & Policy</a></li>
+            <li><a><div class="divider2" role="separator"></div></a></li>
+            <li><a class="nav-menu-email bottom-nav-text" data-langStr="txt_easi_way_email" href="#">info@easi-way.com</a></li>
+            <li>
+              <a>
+                <img class="nav-icon" role="button" alt="wechat"
+                     data-template=
+                       '<div class="popover-wechat" rule="tooltip">
+                <div class="arrow"></div>
+                <div class="popover-wechat-id" data-langStr="txt_wechat_id">Wechat ID : T4012399921</div>
+                <div class="popover-wechat-content" data-langStr="txt_wechat_content">asdf</div>
+                <div class="popover-wechat-qr"></div>
+              </div>' data-toggle="popover" data-placement="top" data-content=" " src="images/wechat.svg">
+              </a>
+            </li>
+            <li><a href="#"><img class="nav-icon" alt="facebook" src="images/facebook.svg"></a></li>
+            <li><a href="#"><img class="nav-icon" alt="instagram" src="images/instagram@3x.png"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- mobile -->
+    <div class="navbar-easi6 mobile-nav navbar-default navbar-fixed-bottom" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img alt="Brand" src="images/logo-easi-6.svg">
+          </a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bottom-navbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse bottom-navbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="nav-menu-policy bottom-nav-text" data-langStr="txt_terms_policy" href="#">Terms & Policy</a></li>
+            <li><a class="nav-menu-email bottom-nav-text" data-langStr="txt_easi_way_email" href="#">info@easi-way.com</a></li>
+            <li>
+              <a><img class="nav-icon" role="button" alt="wechat"
+                      data-template=
+                        '<div class="popover-wechat" rule="tooltip">
+                <div class="arrow"></div>
+                <div class="popover-wechat-id" data-langStr="txt_wechat_id">Wechat ID : T4012399921</div>
+                <div class="popover-wechat-content" data-langStr="txt_wechat_content">asdf</div>
+                <div class="popover-wechat-qr"></div>
+              </div>' data-toggle="popover" data-placement="top" data-content=" " src="images/wechat.svg"></a>
+            </li>
+            <li><a href="#"><img class="nav-icon" alt="facebook" src="images/facebook.svg"></a></li>
+            <li><a href="#"><img class="nav-icon" alt="instagram" src="images/instagram@3x.png"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Driver -->
+  <div class="tab-pane fade" role="tabpanel" id="driver">
+    <!-- Apply -->
+    <div class="container-fluid driver-main-field">
+      <div class="breadcrumb-list">
+        <a class="breadcrumb-font" data-langStr="text_home" style="font-weight: normal;" role="button" data-tab="main" href="#main" data-toggle="tab">Home</a>
+        <img class="breadcrumb-arrow" src="images/arrow.svg">
+        <div class="breadcrumb-font" data-langStr="title_main_driver">Driver APP</div>
+      </div>
+      <div class="center-div">
+        <div class="ems-service-main-title-text" data-langStr="title_main_driver">Driver APP</div>
+        <div class="ems-service-main-subtitle-text" data-langStr="subtitle_main_driver">Driver’s trip and earning management tool</div>
+      </div>
+      <img class="scroll-icn" src="images/img-scrolldown.svg">
+    </div>
+    <div class="container-fluid driver-1-field content-field">
+      <div class="center-div" style="top: 20%">
+        <div class="ems-service-title-text" data-langStr="title_driver_1">Start Driving Now</div>
+        <div class="ems-service-subtitle-text" data-langStr="subtitle_driver_1">Get started after account is created on the manager tool</div>
+      </div>
+    </div>
+    <div class="container-fluid driver-2-field content-field">
+      <div class="center-div" style="top: 20%">
+        <div class="ems-service-title-text" data-langStr="title_driver_2">Prevent Miscommunication</div>
+        <div class="ems-service-subtitle-text" data-langStr="subtitle_driver_2">Receive order and customer information accurately.</div>
+      </div>
+    </div>
+    <div class="container-fluid driver-3-field content-field">
+      <div class="center-div" style="top: 20%">
+        <div class="ems-service-title-text" data-langStr="title_driver_3">No Pen and Paper Needed</div>
+        <div class="ems-service-subtitle-text" data-langStr="subtitle_driver_3">Get expenses approved easily</div>
+      </div>
+    </div>
+    <div class="container-fluid driver-4-field content-field">
+      <div class="center-div" style="top: 20%">
+        <div class="ems-service-title-text" data-langStr="title_driver_4">Be in Order</div>
+        <div class="ems-service-subtitle-text" data-langStr="subtitle_driver_4">Keep accurate track of earnings and reservations.</div>
+      </div>
+    </div>
+    <div class="container-fluid driver-5-field content-field">
+      <div class="center-div" style="top: 20%">
+        <div class="ems-service-title-text" data-langStr="title_driver_5">For All Type of Orders</div>
+        <div class="ems-service-subtitle-text" data-langStr="subtitle_driver_5">Record long-term contract orders up to date.</div>
+      </div>
+    </div>
+    <!-- Apply bottom -->
+    <div class="apply-bottom-field">
+      <div class="apply-content-text" data-langStr="txt_apply_bottom_content">Eliminate trivial tasks with EMS to focus on things that matters most</div>
+      <button class="apply-btn" data-langStr="btn_apply" href="https://www.sojump.hk/jq/13895511.aspx">APPLY NOW</button>
+    </div>
+    <!-- ICP -->
+    <div class="icp-field">
+      <div class="icp-content-text" data-langStr="txt_icp">粤ICP备17020336号粤公网安备 44030402000541号<br>© 2017 深圳易智顺顺科技有限公司 Easi6 Limited. All Rights Reserved.</div>
+    </div>
+    <!-- Bottom NavBar -->
+    <!-- default -->
+    <div class="navbar-easi6 default-nav navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img alt="Brand" src="images/logo-easi-6.svg">
+          </a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="nav-menu-policy bottom-nav-text" data-langStr="txt_terms_policy" href="#">Terms & Policy</a></li>
+            <li><a><div class="divider2" role="separator"></div></a></li>
+            <li><a class="nav-menu-email bottom-nav-text" data-langStr="txt_easi_way_email" href="#">info@easi-way.com</a></li>
+            <li>
+              <a>
+                <img class="nav-icon" role="button" alt="wechat"
+                     data-template=
+                       '<div class="popover-wechat" rule="tooltip">
+                <div class="arrow"></div>
+                <div class="popover-wechat-id" data-langStr="txt_wechat_id">Wechat ID : T4012399921</div>
+                <div class="popover-wechat-content" data-langStr="txt_wechat_content">asdf</div>
+                <div class="popover-wechat-qr"></div>
+              </div>' data-toggle="popover" data-placement="top" data-content=" " src="images/wechat.svg">
+              </a>
+            </li>
+            <li><a href="#"><img class="nav-icon" alt="facebook" src="images/facebook.svg"></a></li>
+            <li><a href="#"><img class="nav-icon" alt="instagram" src="images/instagram@3x.png"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- mobile -->
+    <div class="navbar-easi6 mobile-nav navbar-default navbar-fixed-bottom" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img alt="Brand" src="images/logo-easi-6.svg">
+          </a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bottom-navbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse bottom-navbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="nav-menu-policy bottom-nav-text" data-langStr="txt_terms_policy" href="#">Terms & Policy</a></li>
+            <li><a class="nav-menu-email bottom-nav-text" data-langStr="txt_easi_way_email" href="#">info@easi-way.com</a></li>
+            <li>
+              <a><img class="nav-icon" role="button" alt="wechat"
+                      data-template=
+                        '<div class="popover-wechat" rule="tooltip">
+                <div class="arrow"></div>
+                <div class="popover-wechat-id" data-langStr="txt_wechat_id">Wechat ID : T4012399921</div>
+                <div class="popover-wechat-content" data-langStr="txt_wechat_content">asdf</div>
+                <div class="popover-wechat-qr"></div>
+              </div>' data-toggle="popover" data-placement="top" data-content=" " src="images/wechat.svg"></a>
+            </li>
+            <li><a href="#"><img class="nav-icon" alt="facebook" src="images/facebook.svg"></a></li>
+            <li><a href="#"><img class="nav-icon" alt="instagram" src="images/instagram@3x.png"></a></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
