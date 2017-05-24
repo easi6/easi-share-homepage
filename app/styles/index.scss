@@ -515,12 +515,12 @@ h7 {
 }
 
 .default-nav {
-  visibility: visible;
+  display: block;
 }
 
 .mobile-nav {
   opacity: 1;
-  visibility: hidden;
+  display: none;
 }
 
 .bottom-nav-text {
@@ -912,7 +912,7 @@ a.breadcrumb-font {
   }
 
   .nav-cs-icon, .nav-divider1 {
-    visibility: hidden;
+    display: none;
     height: 0;
     margin: 0;
     padding-top: 0;
@@ -995,15 +995,15 @@ a.breadcrumb-font {
   }
 
   .default-nav {
-    visibility: hidden;
+    display: none;
   }
 
   .mobile-nav {
-    visibility: visible;
+    display: block;
   }
 
   .scroll-icn {
-    visibility: hidden;
+    display: none;
   }
 
   .content-field {

@@ -61,12 +61,12 @@ function setLanguage(lang) {
 
 function setBottomIcons(lang) {
   // hide wechat always temporally
-  $('#nav-bottom-wechat').hide();
+  $('.nav-bottom-wechat').detach();
 
   if (['zh_rCN', 'zh_rTW'].indexOf(lang) >= 0) {
-    $('#nav-bottom-facebook, #nav-bottom-instagram').hide();
+    $('.nav-bottom-facebook, .nav-bottom-instagram').hide();
   } else {
-    $('#nav-bottom-facebook, #nav-bottom-instagram').show();
+    $('.nav-bottom-facebook, .nav-bottom-instagram').show();
   }
 }
 
