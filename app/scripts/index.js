@@ -29,7 +29,6 @@ $('#main, #customer, #manager, #driver, #register').append(bottomTemplate);
  * use $.lang[currentLanguage][languageNumber]
  */
 function setLanguage(lang) {
-  currentLanguage = lang;
   _.forEach($('[data-langstr]'), (elem) => {
     const $elem = $(elem);
     $elem.html($.lang[lang][$elem.data('langstr')]);
@@ -41,9 +40,8 @@ function setLanguage(lang) {
 
   _.forEach($('[data-langimg]'), (elem) => {
     const $elem = $(elem);
-    // $elem.html($.lang[currentLanguage][$elem.data('langimg')]);
     $(document).ready(() => {
-      $elem.css('background-image', `url(${  $.lang[currentLanguage][$elem.data('langimg')]  })`);
+      $elem.css('background-image', `url(${$.lang[currentLanguage][$elem.data('langimg')]})`);
     });
   });
 
@@ -64,7 +62,10 @@ function setBottomIcons(lang) {
 
 // 언어 변경
 $('.lang-selector').click((evt) => {
-  const lang = $(evt.target).data('lang');
+  const langtype = $(evt.target).data('langtype');
+  let lang = currentLanguage;
+  lang = $.langtype[currentLanguage][langtype];
+  currentLanguage = lang;
   Cookies.set('lang', lang);
   setLanguage(lang);
 });
