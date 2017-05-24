@@ -1,3 +1,5 @@
+const currentLanguage = 'en';
+
 const questions = {};
 questions.en = [
   'Company Name',
@@ -37,7 +39,7 @@ descriptions.zh_rCN = [];
 descriptions.zh_rTW = [];
 
 const questionsTypeArr = [
-  'text', 'text', 'text', 'text', 'text',
+  'text', 'text', 'text', 'email', 'text',
 
   'radio', 'radio', 'radio', 'checkbox', 'checkbox',
 
@@ -163,32 +165,62 @@ const names = [
 ];
 
 
-function renderQuestions(currentLanguage) {
+function renderQuestions(selectedLanguage) {
   for (let i = 0; i < 11; i++) {
     const question = {
       number: i + 1,
       name: names[i],
-      title: questions[currentLanguage][i] || '',
-      description: descriptions[currentLanguage][i] || '',
+      title: questions[selectedLanguage][i] || '',
+      description: descriptions[selectedLanguage][i] || '',
       required: true,
       type: questionsTypeArr[i],
       options: options[i],
-      currentLanguage: currentLanguage,
+      currentLanguage: selectedLanguage,
     };
     const template = nunjucks.render('question.html', question);
     $('#register-form-content').append(template);
   }
 }
 
-renderQuestions('en');
+renderQuestions(currentLanguage);
 
-$registerForm = $('#register-form');
+const $registerForm = $('#register-form');
+const $csrfField = $('#csrf');
+
+function showErrorMessage(name) {
+  const matcher = `#${name}-qa-box .register-a-err`;
+  $(matcher).html($.lang[currentLanguage].err_required || 'Please select one of these options.');
+}
+
+function removeAllErrorMessages() {
+  $('.register-a-err').html('');
+}
 
 $registerForm.submit(() => {
+  removeAllErrorMessages();
   const url = $registerForm.attr('action');
   const data = $registerForm.serialize();
+
+  const dataArr = $registerForm.serializeArray();
+  const checkedServiceRegion = _.find(dataArr, {name: 'service_region'});
+  const checkedCarTypes = _.find(dataArr, {name: 'car_types'});
+
+
+  if (checkedCarTypes == null) {
+    showErrorMessage('car_types');
+    location.href = '#car_types-qa-box';
+    return false;
+  }
+
+  if (checkedServiceRegion == null) {
+    showErrorMessage('service_region');
+    location.href = '#service_region-qa-box';
+    return false;
+  }
+
   const success = (res) => {
-    console.log('res', res);
+    alert($.lang[currentLanguage].register_succeed || 'Register succeed. Thanks.');
+    location.href = '/';
   };
   const dataType = 'json';
   $.ajax({
@@ -200,3 +232,18 @@ $registerForm.submit(() => {
   });
   return false;
 });
+
+function getCsrfToken() {
+  $.ajax({
+    type: 'GET',
+    url: 'http://api.easixing.dev:9000/companies/signup_csrf',
+    xhrFields: {
+      withCredentials: true,
+    },
+    success: (res, status, xhr) => {
+      $csrfField.val(res);
+    },
+  });
+}
+
+getCsrfToken();

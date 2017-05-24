@@ -1,4 +1,12 @@
 module.exports = {
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "$": false,
+    "_": false,
+    "nunjucks": false
+  },
   "parser": "babel-eslint",
   "rules": {
     "quotes": ["warn", "single"],

@@ -58,8 +58,7 @@
               break;
 
             case 'redundant':
-              throw new Error('The installing ' +
-                              'service worker became redundant.');
+              throw new Error('The installing ' + 'service worker became redundant.');
 
             default:
               // Ignore
@@ -67,7 +66,8 @@
           };
         }
       };
-    }).catch((e) => {
+    })
+    .catch((e) => {
       console.error('Error during service worker registration:', e);
     });
   }
