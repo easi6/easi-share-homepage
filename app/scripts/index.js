@@ -139,20 +139,22 @@ $.lang.zh_rTW = {
   txt_terms_policy: 'Terms & Policy',
 };
 
+$.lang.ko = {};
+
 /**
  * setLanguage
  * use $.lang[currentLanguage][languageNumber]
  */
 function setLanguage(currentLanguage) {
-  $('[data-langStr]').each(function() {
-    const $this = $(this);
+  _.forEach($('[data-langStr]'), (elem) => {
+    const $this = $(elem);
     $this.html($.lang[currentLanguage][$this.data('langstr')]);
   });
 }
 
 // 언어 변경
-$('a').click(function() {
-  const lang = $(this).data('lang');
+$('.lang-selector').click((evt) => {
+  const lang = $(evt.target).data('lang');
   setLanguage(lang);
 });
 
@@ -160,7 +162,7 @@ $('a').click(function() {
 $('[data-toggle=\'popover\']').popover();
 
 // 탭 이동
-$('[data-toggle=\'tab\']').click(function() {
+$('[data-toggle=\'tab\']').click(() => {
   document.getElementById('top-view').scrollIntoView();
 });
 
