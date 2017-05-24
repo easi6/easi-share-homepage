@@ -28,76 +28,71 @@
 
 .register-qa-box {
   margin-bottom: 36px;
-}
 
-.register-q-box {
-  margin-bottom: 8px;
-}
+  .register-q-box {
+    margin-bottom: 8px;
 
-.register-q {
-  font-weight: bold;
-  height: 16px;
-  font-size: 14px;
-  color: #000000;
-}
+    .register-q {
+      font-weight: bold;
+      height: 16px;
+      font-size: 14px;
+      color: #000000;
+    }
 
-.register-q-required {
-  font-weight: bold;
-  height: 16px;
-  font-size: 14px;
-  color: #ff0000;
-}
+    .register-q-required {
+      font-weight: bold;
+      height: 16px;
+      font-size: 14px;
+      color: #ff0000;
+    }
 
-.register-q-desc {
-  height: 12px;
-  font-size: 11px;
-  color: #999999;
-  margin-left: 6px;
-}
+    .register-q-desc {
+      height: 12px;
+      font-size: 11px;
+      color: #999999;
+      margin-left: 6px;
+    }
+  }
+  .register-a-box {
+    .register-a-text-field {
+      width: 100%;
+      height: 37px;
+      background-color: #ffffff;
+      border: solid 1px #d3d3d3;
+    }
 
-.register-a-text-field {
-  width: 100%;
-  height: 37px;
-  background-color: #ffffff;
-  border: solid 1px #d3d3d3;
-}
+    .register-radio-option, .register-checkbox-option {
+      margin-top: 10px;
+      label {
+        font-weight: normal;
 
-.register-a-err {
-  height: 14px;
-  width: 100%;
-  display: block;
-}
+      }
+    }
 
-.register-radio-option, .register-checkbox-option {
-  margin-top: 10px;
-}
-
-.register-radio-option label, .register-checkbox-option label {
-  font-weight: normal;
+    .register-a-err {
+      height: 14px;
+      width: 100%;
+      display: block;
+      font-size: 12px;
+      color: #ff0000;
+    }
+  }
 }
 
 .register-form-submit {
   width: 100%;
   text-align: center;
   border-top: 1px solid #dfe8ee;
+
+  .register-form-submit-btn {
+    width: 280px;
+    height: 37px;
+    background-color: #00c1f4;
+    border: 0px;
+    color: #ffffff;
+    margin: 16px;
+  }
 }
-
-.register-form-submit-btn {
-  width: 280px;
-  height: 37px;
-  background-color: #00c1f4;
-  border: 0px;
-  color: #ffffff;
-  margin: 16px;
-}
-
-.register-a-err {
-  height: 14px;
-  font-size: 12px;
-  color: #ff0000;
-}
-
-
 
 .custom-check {
   position: relative;
