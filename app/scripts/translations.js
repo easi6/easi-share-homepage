@@ -1,9 +1,9 @@
 // 언어팩 선언.
 $.lang = {};
 $.lang.en = {
-  img_manager_3: '../images/m-3@3x.png',
-  img_manager_4: '../images/m-4@3x.png',
-  img_manager_5: '../images/m-5@3x.png',
+  img_manager_3: '../images/m-3@2x.jpg',
+  img_manager_4: '../images/m-4@2x.jpg',
+  img_manager_5: '../images/m-5@2x.jpg',
   svg_ems_logo: 'images/logo-ems.svg',
   locale: 'English',
   lang_item_1: '中文简体',
@@ -99,9 +99,9 @@ $.lang.en = {
 };
 
 $.lang.zh_rCN = {
-  img_manager_3: '../images/m-3-tra@3x.png',
-  img_manager_4: '../images/m-4-tra@3x.png',
-  img_manager_5: '../images/m-5-tra@3x.png',
+  img_manager_3: '../images/m-3-tra@2x.jpg',
+  img_manager_4: '../images/m-4-tra@2x.jpg',
+  img_manager_5: '../images/m-5-tra@2x.jpg',
   svg_ems_logo: 'images/logo-ems-cn.svg',
   locale: '中文简体',
   lang_item_1: '中文繁体',
@@ -196,9 +196,9 @@ $.lang.zh_rCN = {
 };
 
 $.lang.zh_rTW = {
-  img_manager_3: '../images/m-3-tra@3x.png',
-  img_manager_4: '../images/m-4-tra@3x.png',
-  img_manager_5: '../images/m-5-tra@3x.png',
+  img_manager_3: '../images/m-3-tra@2x.jpg',
+  img_manager_4: '../images/m-4-tra@2x.jpg',
+  img_manager_5: '../images/m-5-tra@2x.jpg',
   svg_ems_logo: 'images/logo-ems-cn.svg',
   locale: '中文簡體',
   lang_item_1: '中文繁體',

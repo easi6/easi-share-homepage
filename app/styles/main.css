@@ -25,7 +25,7 @@ html, body {
   padding: 0;
 }
 .mdl-demo .mdl-layout__header {
-  background-image: url('../images/img.png');
+  background-image: url('../images/img@2x.jpg');
 }
 .mdl-demo .mdl-layout__header-row {
   padding-left: 40px;
