@@ -2,6 +2,9 @@
  * Created by klsayhtg on 2017. 5. 16..
  */
 
+const bottomTemplate = nunjucks.render('bottom.html', {});
+$('#main, #customer, #manager, #driver, #register').append(bottomTemplate);
+
 // 언어팩 선언.
 $.lang = {};
 $.lang.en = {

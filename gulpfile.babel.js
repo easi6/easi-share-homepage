@@ -149,7 +149,7 @@ gulp.task('scripts', () =>
 );
 
 gulp.task('nunjucks', () =>
-  gulp.src('./app/templates/question.html')
+  gulp.src('./app/templates/**/*.html')
     .pipe(plumber())
     .pipe(nunjucks.precompile())
     .pipe(gulp.dest('.tmp/templates'))
