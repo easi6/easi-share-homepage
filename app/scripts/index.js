@@ -163,7 +163,9 @@ $('[data-toggle=\'popover\']').popover();
 
 // 탭 이동
 $('[data-toggle=\'tab\']').click(() => {
-  document.getElementById('top-view').scrollIntoView();
+  $("html, body").animate({
+    scrollTop: 0
+  }, 600);
 });
 
 // set default language
