@@ -927,7 +927,22 @@ h7 {
   }
 
   .content-field {
-    width: 500px;
+    background-size: 150%;
+  }
+
+  .center-content-text {
+    position: relative;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .center-content-main-text {
+    position: relative;
+  }
+
+  .ems-service-subtitle-text {
+    max-width: none;
   }
 
   .tab-pane {
