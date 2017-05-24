@@ -2,7 +2,7 @@
  * Created by klsayhtg on 2017. 5. 16..
  */
 
-let currentLanguage = 'en';
+let currentLanguage = 'zh_rCN';
 
 const applyBottomTemplate = nunjucks.render('apply-bottom.html', {});
 $('#main, #customer, #manager, #driver').append(applyBottomTemplate);
@@ -46,8 +46,8 @@ $.lang.en = {
   txt_win_title: 'Win!',
   txt_win_content: 'Going into bidding? Take secure cloud-based EMS with you to win',
   title_social_proof: 'Social Proof',
-  'social-txt_andasun-1': 'Andasun',
-  txt_andasun_content: '“It’s easy and boost work efficiency. We no longer have to make multiple phone calls or search through documents to find an available driver.”',
+  txt_andashun: 'Andashun',
+  txt_andashun_content: '“It’s easy and boost work efficiency. We no longer have to make multiple phone calls or search through documents to find an available driver.”',
   txt_rich: 'Rich Pacific International',
   txt_rich_content: '“We love how we can track where the drivers are to make sure they are in time for pickup. With this tool, we can provide better service.”',
   txt_manager: 'Manager',
@@ -77,7 +77,7 @@ $.lang.zh_rCN = {
   txt_order: '订单',
   txt_dispatch: '安排',
   title_ems_service: '易智行解决方案',
-  txt_customer_title: '客户预订工具（含网页与app）',
+  txt_customer_title: '客户预订工具(含网页与app)',
   txt_customer_content: '为您的客户创建账户，客户下单后，您可以接收到订单。',
   txt_manager_title: '调度工具',
   txt_manager_content: '提供全流程一站式的服务，可为客户下单、行程安排、司机车辆调度等。',
@@ -93,8 +93,8 @@ $.lang.zh_rCN = {
   txt_win_title: '商业机遇',
   txt_win_content: '需要投标？使用云端安全加密技术的易智行助您在投标中脱颖而出！',
   title_social_proof: '客户评价',
-  'social-txt_andasun-1': '深圳市安达顺汽车服务有限公司',
-  txt_andasun_content: '“易智行系统使用方便，并提高了工作效率。我们不需要打多次电话或者查看安排表来确认是否有可安排的司机。”',
+  txt_andashun: '深圳市安达顺汽车服务有限公司',
+  txt_andashun_content: '“易智行系统使用方便，并提高了工作效率。我们不需要打多次电话或者查看安排表来确认是否有可安排的司机。”',
   txt_rich: '富邦国际发展有限公司',
   txt_rich_content: '“我们可以实时监控司机的位置，以确保司机准时接客。我们很喜欢这个实用的功能。通过易智行，我们能够提供更优质的服务。”',
   txt_manager: '调度',
@@ -137,8 +137,8 @@ $.lang.zh_rTW = {
   txt_win_title: 'Win!',
   txt_win_content: 'Going into bidding? Take secure cloud-based EMS with you to win',
   title_social_proof: 'Social Proof',
-  'social-txt_andasun-1': 'Andasun',
-  txt_andasun_content: '“It’s easy and boost work efficiency. We no longer have to make multiple phone calls or search through documents to find an available driver.”',
+  txt_andashun: 'Andashun',
+  txt_andashun_content: '“It’s easy and boost work efficiency. We no longer have to make multiple phone calls or search through documents to find an available driver.”',
   txt_rich: 'Rich Pacific International',
   txt_rich_content: '“We love how we can track where the drivers are to make sure they are in time for pickup. With this tool, we can provide better service.”',
   txt_manager: 'Manager',

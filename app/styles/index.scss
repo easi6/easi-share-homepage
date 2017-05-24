@@ -1,15 +1,15 @@
-@font-face {
-  font-family: 'NanumBarunGothicOTF';
-  src: url('../fonts/NanumBarunGothic.otf') format('otf');
+$font-nanum: NanumBarunGothicOTF sans-serif;
+$font-replica: ReplicaPro sans-serif;
+
+html {
+  height: 100%;
+  font-family: sans-serif;
 }
 
 body {
   height: 100%;
   padding-top: 60px;
-}
-
-html {
-  height: 100%;
+  font-family: sans-serif;
 }
 
 hr {
@@ -67,9 +67,10 @@ hr {
 }
 
 .top-nav-text {
-  font-family: NanumBarunGothicOTF;
+  font-family: $font-nanum;
   font-size: 14px;
-  color: #000000;
+  color: #000000 !important;
+  font-weight: bold;
 }
 
 /* Tab */
@@ -100,10 +101,11 @@ hr {
 }
 
 .apply-txt {
-  margin-bottom: 10px;
+  margin-top: 0px;
+  margin-bottom: 30px;
   font-size: 54px;
   font-weight: bold;
-  font-family: ReplicaPro;
+  font-family: $font-replica;
   color: #ffffff;
 }
 
@@ -132,18 +134,19 @@ hr {
 
 /* EMS Illust */
 .title_text {
-  font-family: ReplicaPro;
+  font-family: $font-replica;
   font-size: 26px;
   text-align: center;
   color: #000000;
 }
 
 .ems-text2 {
-  font-family: NanumBarunGothicOTF;
+  font-family: $font-nanum;
   font-size: 16px;
   line-height: 1.38;
   text-align: center;
   color: #aaaaaa;
+  margin-top: 10px;
 }
 
 .illust-text {
@@ -236,6 +239,24 @@ h3 {
   margin: 10px;
 }
 
+.service-list-item {
+  padding: 0;
+  .service-list-item-layer {
+    transition: background-color 0.7s ease;
+  }
+  &:hover {
+    .service-list-item-layer {
+
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: rgba(65, 140, 250, 0.8);
+    }
+  }
+}
+
 .ems-customer-box {
   background: url("../images/customer.png") no-repeat center;
 }
@@ -265,14 +286,14 @@ h3 {
 }
 
 h4 {
-  font-family: NanumBarunGothicOTF;
+  font-family: $font-nanum;
   font-size: 20px;
   font-weight: bold;
   color: #ffffff;
 }
 
 h5 {
-  font-family: NanumBarunGothicOTF;
+  font-family: $font-nanum;
   font-size: 14px;
   line-height: 1.57;
   color: #ffffff;
@@ -312,14 +333,14 @@ h5 {
 }
 
 h6 {
-  font-family: NanumBarunGothicOTF;
+  font-family: $font-nanum;
   font-size: 20px;
   font-weight: bold;
   color: #000000;
 }
 
 h7 {
-  font-family: NanumBarunGothicOTF;
+  font-family: $font-nanum;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.57;
@@ -374,7 +395,7 @@ h7 {
 }
 
 .social-text-1 {
-  font-family: NanumBarunGothicOTF;
+  font-family: $font-nanum;
   margin-top: 14px;
   font-size: 17px;
   font-weight: bold;
@@ -382,7 +403,7 @@ h7 {
 }
 
 .social-text-2 {
-  font-family: NanumBarunGothicOTF;
+  font-family: $font-nanum;
   font-size: 12px;
   font-weight: bold;
   color: #9b9b9b;
@@ -391,7 +412,7 @@ h7 {
 .social-text-3 {
   max-width: 265px;
   margin-top: 7px;
-  font-family: NanumBarunGothicOTF;
+  font-family: $font-nanum;
   font-size: 14px;
   font-weight: normal;
   line-height: 1.57;
@@ -408,7 +429,7 @@ h7 {
 
 .apply-content-text {
   margin-bottom: 24px;
-  font-family: ReplicaPro;
+  font-family: $font-replica;
   font-size: 26px;
   color: #ffffff;
 }
@@ -416,16 +437,24 @@ h7 {
 /* ICP */
 .icp-content-text {
   background: #2e2e2e;
-  padding: 9px;
-  opacity: 0.8;
-  font-family: ArialMT;
+  padding: 12px;
   font-size: 12px;
   font-weight: normal;
   font-stretch: normal;
   line-height: 1.58;
   letter-spacing: normal;
   text-align: center;
-  color: #ffffff;
+  color: #aaaaaa;
+  a {
+    display: inline-block;
+    height:20px;
+    line-height:20px;
+    text-decoration:none;
+    &:hover {
+      color: #aaaaaa;
+    }
+    color: #aaaaaa;
+  }
 }
 
 /* Bottom NavBar */
@@ -440,7 +469,6 @@ h7 {
 
 .nav-menu-email {
   margin-left: -15px;
-  opacity: 0.8;
 }
 
 .navbar-easi6 {
@@ -525,7 +553,7 @@ h7 {
 }
 
 .popover-wechat > .popover-wechat-id {
-  font-family: NanumBarunGothicOTF;
+  font-family: $font-nanum;
   margin-top: 26px;
   font-size: 14px;
   font-weight: bold;
@@ -533,7 +561,7 @@ h7 {
 }
 
 .popover-wechat > .popover-wechat-content {
-  font-family: NanumBarunGothicOTF;
+  font-family: $font-nanum;
   margin-bottom: 24px;
   opacity: 0.4;
   font-size: 14px;
@@ -574,13 +602,13 @@ h7 {
 }
 
 .ems-service-main-title-text {
-  font-family: ReplicaPro;
+  font-family: $font-replica;
   font-size: 46px;
   color: #ffffff;
 }
 
 .ems-service-main-subtitle-text {
-  font-family: NanumBarunGothicOTF;
+  font-family: $font-nanum;
   font-size: 16px;
   line-height: 1.5;
   color: #ffffff;
@@ -596,9 +624,9 @@ h7 {
 
 .breadcrumb-font {
   float: left;
-  font-family: NanumBarunGothicOTF;
+  font-family: $font-nanum;
   font-size: 13px;
-  font-weight: bold;
+  font-weight: normal;
   color: #ffffff;
 }
 
@@ -607,7 +635,7 @@ h7 {
   float: left;
   width: 6px;
   height: 10px;
-  margin: 0 10px;
+  margin: 4px 10px 0;
   vertical-align: middle;
 }
 
@@ -741,7 +769,7 @@ h7 {
 }
 
 .ems-service-title-text {
-  font-family: NanumBarunGothicOTF;
+  font-family: $font-nanum;
   font-size: 28px;
   font-weight: bold;
   color: #000000;
@@ -749,7 +777,7 @@ h7 {
 
 .ems-service-subtitle-text {
   max-width: 620px;
-  font-family: NanumBarunGothicOTF;
+  font-family: $font-nanum;
   font-size: 14px;
   font-weight: bold;
   line-height: 1.57;
@@ -819,7 +847,7 @@ h7 {
   }
 
   .bottom-nav-text {
-    font-family: NanumBarunGothicOTF;
+    font-family: $font-nanum;
     font-size: 14px;
   }
 
@@ -980,5 +1008,74 @@ h7 {
   .illust-order {
     top: 80px;
     right: 9px;
+  }
+}
+
+.nav-menu-policy, .nav-menu-email {
+  color: #777777 !important;
+  &:hover {
+    color: #777777 !important;
+  }
+}
+
+
+
+@media (min-height: 1200px) {
+  .ems-service-main-title-text {
+    font-size: 92px;
+  }
+  .ems-service-main-subtitle-text {
+    font-size: 32px;
+  }
+  .ems-service-title-text {
+    font-size: 56px;
+  }
+  .ems-service-subtitle-text {
+    font-size: 28px;
+  }
+}
+
+@media (max-height: 1200px) {
+  .ems-service-main-title-text {
+    font-size: 92px;
+  }
+  .ems-service-main-subtitle-text {
+    font-size: 32px;
+  }
+  .ems-service-title-text {
+    font-size: 56px;
+  }
+  .ems-service-subtitle-text {
+    font-size: 28px;
+  }
+}
+
+@media (max-height: 1000px) {
+  .ems-service-main-title-text {
+    font-size: 69px;
+  }
+  .ems-service-main-subtitle-text {
+    font-size: 24px;
+  }
+  .ems-service-title-text {
+    font-size: 42px;
+  }
+  .ems-service-subtitle-text {
+    font-size: 21px;
+  }
+}
+
+@media (max-height: 800px) {
+  .ems-service-main-title-text {
+    font-size: 46px;
+  }
+  .ems-service-main-subtitle-text {
+    font-size: 16px;
+  }
+  .ems-service-title-text {
+    font-size: 28px;
+  }
+  .ems-service-subtitle-text {
+    font-size: 14px;
   }
 }
