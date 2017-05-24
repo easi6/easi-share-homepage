@@ -5,6 +5,9 @@ $.lang.en = {
   img_manager_4: '../images/m-4@3x.png',
   img_manager_5: '../images/m-5@3x.png',
   locale: 'English',
+  lang_item_1: '中文简体',
+  lang_item_2: '中文繁体',
+  lang_item_3: '한국어',
   txt_support: 'Support',
   txt_login: 'Login',
   title_apply: 'Be in control',
@@ -53,6 +56,9 @@ $.lang.zh_rCN = {
   img_manager_4: '../images/m-4-tra@3x.png',
   img_manager_5: '../images/m-5-tra@3x.png',
   locale: '中文简体',
+  lang_item_1: '中文繁体',
+  lang_item_2: 'English',
+  lang_item_3: '한국어',
   txt_support: '支持',
   txt_login: '登录',
   title_apply: '连接你我',
@@ -98,6 +104,9 @@ $.lang.zh_rCN = {
 
 $.lang.zh_rTW = {
   locale: '中文繁体',
+  lang_item_1: '中文简体',
+  lang_item_2: 'English',
+  lang_item_3: '한국어',
   txt_support: '支持',
   txt_login: '登錄',
   title_apply: '連接你我',
@@ -140,3 +149,28 @@ $.lang.zh_rTW = {
 };
 
 $.lang.ko = {};
+
+$.langtype = {};
+$.langtype.en = {
+  item1: 'zh_rCN',
+  item2: 'zh_rTW',
+  item3: 'ko',
+};
+
+$.langtype.zh_rCN = {
+  item1: 'zh_rTW',
+  item2: 'en',
+  item3: 'ko',
+};
+
+$.langtype.zh_rTW = {
+  item1: 'zh_rCN',
+  item2: 'en',
+  item3: 'ko',
+};
+
+$.langtype.ko = {
+  item1: 'en',
+  item2: 'zh_rCN',
+  item3: 'zh_rTW',
+};

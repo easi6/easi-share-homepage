@@ -42,15 +42,20 @@
         <li><a class="nav-menu-login top-nav-text" data-langstr="txt_login" href="https://api.easi-share.com/companies" target="_blank">Login</a></li>
         <li class="nav-divider1"><div class="divider1" role="separator"></div></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            <div style="float: left;" class="top-nav-text" data-langstr="locale">English</div>
-            <span style="margin-left: 27px;"><img src="images/btn-dropdown-n.svg"></span>
+          <a href="#" class="lang-dropdown dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <div style="float: left" class="top-nav-text" data-langstr="locale">English</div>
+            <img class="dropdown-icon" src="images/btn-dropdown-n.svg">
           </a>
           <ul class="dropdown-menu top-nav-text">
-            <li><a class="lang-selector" data-lang="zh_rCN">中文简体</a></li>
-            <li><a class="lang-selector" data-lang="zh_rTW">中文繁体</a></li>
-            <li><a class="lang-selector" data-lang="en">English</a></li>
-            <li><a class="lang-selector" data-lang="ko">한국어</a></li>
+            <li>
+              <a>
+                <div style="float: left" class="lang-selector" data-langstr="locale">English</div>
+                <img class="dropup-icon" src="images/btn-dropdown-s.svg">
+              </a>
+            </li>
+            <li><a class="lang-selector" data-langtype="item1" data-langstr="lang_item_1">中文简体</a></li>
+            <li><a class="lang-selector" data-langtype="item2" data-langstr="lang_item_2">中文繁体</a></li>
+            <li><a class="lang-selector" data-langtype="item3" data-langstr="lang_item_3">한국어</a></li>
           </ul>
         </li>
       </ul>
