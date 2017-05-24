@@ -37,9 +37,9 @@
     </div>
     <div class="navbar-collapse collapse top-navbar">
       <ul class="nav navbar-nav navbar-right">
-        <li class="nav-cs-icon"><a href="#"><img class="icon-cs" alt="cs" src="images/icon-cs.svg"></a></li>
-        <li><a class="nav-menu-support top-nav-text" data-langstr="txt_support" href="#">Support</a></li>
-        <li><a class="nav-menu-login top-nav-text" data-langstr="txt_login" href="#">Login</a></li>
+        <!--<li class="nav-cs-icon"><a href="#"><img class="icon-cs" alt="cs" src="images/icon-cs.svg"></a></li>-->
+        <!--<li><a class="nav-menu-support top-nav-text" data-langstr="txt_support" href="#">Support</a></li>-->
+        <li><a class="nav-menu-login top-nav-text" data-langstr="txt_login" href="https://api.easi-share.com/companies" target="_blank">Login</a></li>
         <li class="nav-divider1"><div class="divider1" role="separator"></div></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -169,7 +169,7 @@
     <!-- Apply -->
     <div class="container-fluid customer-main-field">
       <div class="breadcrumb-list breadcrumb-font">
-        <a class="breadcrumb-font" data-langstr="text_home" style="font-weight: normal;" role="button" data-tab="main" href="#main" data-toggle="tab">Home</a>
+        <a class="breadcrumb-font" data-langstr="text_home" role="button" data-tab="main" href="#main" data-toggle="tab">Home</a>
         <img class="breadcrumb-arrow" src="images/arrow.svg">
         <div class="breadcrumb-font" data-langstr="title_main_customer">Customer Tool & APP</div>
       </div>
@@ -215,7 +215,7 @@
     <!-- Apply -->
     <div class="container-fluid manager-main-field">
       <div class="breadcrumb-list breadcrumb-font">
-        <a class="breadcrumb-font" data-langstr="text_home" style="font-weight: normal;" role="button" data-tab="main" href="#main" data-toggle="tab">Home</a>
+        <a class="breadcrumb-font" data-langstr="text_home" role="button" data-tab="main" href="#main" data-toggle="tab">Home</a>
         <img class="breadcrumb-arrow" src="images/arrow.svg">
         <div class="breadcrumb-font" data-langstr="title_main_manager">Manager tool</div>
       </div>
@@ -261,7 +261,7 @@
     <!-- Apply -->
     <div class="container-fluid driver-main-field">
       <div class="breadcrumb-list">
-        <a class="breadcrumb-font" data-langstr="text_home" style="font-weight: normal;" role="button" data-tab="main" href="#main" data-toggle="tab">Home</a>
+        <a class="breadcrumb-font" data-langstr="text_home" role="button" data-tab="main" href="#main" data-toggle="tab">Home</a>
         <img class="breadcrumb-arrow" src="images/arrow.svg">
         <div class="breadcrumb-font" data-langstr="title_main_driver">Driver APP</div>
       </div>
@@ -313,14 +313,16 @@
           Our sales team will contract you for further guidance as soon as possible.
         </h2>
       </div>
-      <form id="register-form" action="http://api.easixing.dev:9000/companies/signup_request">
+    </div>
+    <form id="register-form" action="http://api.easixing.dev:9000/companies/signup_request">
+      <div class="register-form-field">
         <div id="register-form-content">
         </div>
-        <div class="register-form-submit">
-          <input class="register-form-submit-btn" type="submit" value="Confirm" data-langstr="register_confirm_btn" />
-        </div>
-      </form>
-    </div>
+      </div>
+      <div class="register-form-submit">
+        <input class="register-form-submit-btn" type="submit" value="Confirm" data-langstr="register_confirm_btn" />
+      </div>
+    </form>
   </div>
 </div>
 <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
@@ -332,6 +334,7 @@
 <script src="templates/question.js"></script>
 <script src="templates/bottom.js"></script>
 <script src="templates/apply-bottom.js"></script>
+<script src="scripts/translations.js"></script>
 <script src="scripts/index.js"></script>
 </body>
 </html>

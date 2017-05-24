@@ -622,6 +622,19 @@ h7 {
   text-align: center;
 }
 
+a.breadcrumb-font {
+  float: left;
+  font-family: $font-nanum;
+  font-size: 13px;
+  font-weight: normal;
+  color: #ffffff;
+  &:hover {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
 .breadcrumb-font {
   float: left;
   font-family: $font-nanum;
