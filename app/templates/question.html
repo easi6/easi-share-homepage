@@ -1,10 +1,10 @@
 <div id="{{name}}-qa-box" class="register-qa-box">
   <div class="register-q-box">
-    <span class="register-q">{{ number }}. {{ title }}</span>
+    <span class="register-q" data-langstr="register_question_{{number}}"></span>
     {% if required %}
       <span class="register-q-required">*</span>
     {% endif %}
-    <span class="register-q-desc">{{ description }}</span>
+    <span class="register-q-desc" data-langstr="register_desc_{{number}}"></span>
   </div>
   <div class="register-a-box">
     {% if type == 'text' %}
@@ -15,14 +15,14 @@
       {% for option in options %}
         <div class="register-radio-option custom-radio">
           <input type="radio" value="{{option.value}}" id="radio-{{name}}-{{option.value}}" name="{{name}}" {% if required %} required="true" {% endif %} />
-          <label for="radio-{{name}}-{{option.value}}">{{option.label[currentLanguage]}}</label>
+          <label for="radio-{{name}}-{{option.value}}" data-langstr="register_option_{{option.name}}_{{option.value}}"></label>
         </div>
       {% endfor %}
     {% elif type == 'checkbox' %}
       {% for option in options %}
         <div class="register-checkbox-option custom-check">
           <input type="checkbox" value="{{option.value}}" id="check-{{name}}-{{option.value}}" name="{{name}}">
-          <label for="check-{{name}}-{{option.value}}">{{option.label[currentLanguage]}}</label>
+          <label for="check-{{name}}-{{option.value}}" data-langstr="register_option_{{option.name}}_{{option.value}}"></label>
         </div>
       {% endfor %}
     {% endif %}

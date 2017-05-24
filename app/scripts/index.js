@@ -146,9 +146,9 @@ $.lang.ko = {};
  * use $.lang[currentLanguage][languageNumber]
  */
 function setLanguage(currentLanguage) {
-  _.forEach($('[data-langStr]'), (elem) => {
-    const $this = $(elem);
-    $this.html($.lang[currentLanguage][$this.data('langstr')]);
+  _.forEach($('[data-langstr]'), (elem) => {
+    const $elem = $(elem);
+    $elem.html($.lang[currentLanguage][$elem.data('langstr')]);
   });
 }
 
@@ -163,8 +163,8 @@ $('[data-toggle=\'popover\']').popover();
 
 // 탭 이동
 $('[data-toggle=\'tab\']').click(() => {
-  $("html, body").animate({
-    scrollTop: 0
+  $('html, body').animate({
+    scrollTop: 0,
   }, 600);
 });
 

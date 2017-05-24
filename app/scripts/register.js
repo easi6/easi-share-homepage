@@ -16,26 +16,30 @@ questions.en = [
 
   'Do you want to take easiway, OTA orders?',
 ];
-questions.zh_rCN = [];
+questions.zh_rCN = [
+  '公司名称', '联系方式', '公司详细地址', '公司邮箱地址', '登录账号',
+
+  '语言设置', '贵公司业务所覆盖的城市', '是否需要管理长租/固定合同的司机？', '贵公司的车辆类型有哪些？', '公司提供服务的区域类型？',
+
+  '贵公司可以接受易路的订单吗？',
+];
 questions.zh_rTW = [];
 
 const descriptions = {};
 descriptions.en = [
-  'Enter your company’s full name',
-  null,
-  null,
-  null,
-  null,
+  'Enter your company’s full name', null, null, null, null,
 
-  null,
-  null,
-  null,
-  'Enter your company’s full name',
-  'Select all that applies to your company',
+  null, null, null, 'Select all that applies to your company', 'Select all that applies to your company',
 
   null,
 ];
-descriptions.zh_rCN = [];
+descriptions.zh_rCN = [
+  '输入贵公司的全称', null, null, null, null,
+
+  null, null, null, '请选择贵公司拥有的所有车辆类型', '请选择贵公司拥有的所有车辆类型',
+
+  null,
+];
 descriptions.zh_rTW = [];
 
 const questionsTypeArr = [
@@ -48,18 +52,20 @@ const questionsTypeArr = [
 
 const yesOrNo = [
   {
+    name: 'yesOrNo',
     value: 'true',
     label: {
       en: 'Yes',
-      zh_rCN: '',
+      zh_rCN: '是',
       zh_rTW: '',
     },
   },
   {
+    name: 'yesOrNo',
     value: 'false',
     label: {
       en: 'No',
-      zh_rCN: '',
+      zh_rCN: '否',
       zh_rTW: '',
     },
   },
@@ -74,11 +80,15 @@ cityNames.en = [
   'Shenzhen', 'Hongkong', 'Macau', 'Zhuhai', 'Meizhou',
   'Guangzhou', 'Taiwan', 'Jakarta', 'Bali', 'Etc',
 ];
-cityNames.zh_rCN = [];
+cityNames.zh_rCN = [
+  '深圳', '香港', '澳门', '珠海', '梅州',
+  '广州', '台灣', 'Jakarta', 'Bali', 'Etc',
+];
 cityNames.zh_rTW = [];
 
 for (let i = 0; i < cityNames.en.length; i++) {
   cities.push({
+    name: 'city',
     value: cityValues[i],
     label: {
       en: cityNames.en[i],
@@ -94,13 +104,16 @@ const langValues = [
 ];
 const langNames = {};
 langNames.en = [
-  'Chinese - Simplified', 'Chinese - Traditional', 'English',
+  '中文简体', '中文繁体', 'English',
 ];
-langNames.zh_rCN = [];
+langNames.zh_rCN = [
+  '中文简体', '中文繁体', 'English',
+];
 langNames.zh_rTW = [];
 
 for (let i = 0; i < langNames.en.length; i++) {
   langs.push({
+    name: 'lang',
     value: langValues[i],
     label: {
       en: langNames.en[i],
@@ -126,11 +139,21 @@ vanNames.en = [
   'Mini Bus (21-person)',
   'Black Sedan (A6 similar)',
 ];
-vanNames.zh_rCN = [];
+vanNames.zh_rCN = [
+  '商务车（丰田埃尔法或类似车型）',
+  '轿车（凯美瑞或类似车型）',
+  '跨境商务车',
+  '跨境轿车',
+  '大巴（49座）',
+
+  '中巴（21座）',
+  '豪华轿车（奥迪A6或类似车型）',
+];
 vanNames.zh_rTW = [];
 
 for (let i = 0; i < vanNames.en.length; i++) {
   vans.push({
+    name: 'van',
     value: vanValues[i],
     label: {
       en: vanNames.en[i],
@@ -164,25 +187,45 @@ const names = [
   'easiway_ind',
 ];
 
+function prepareTranslations() {
+  const questionsLength = questions.en.length;
+  _.forEach(['en', 'zh_rCN', 'zh_rTW'], (lang) => {
+    for (let i = 0; i < questionsLength; i++) {
+      const number = i + 1;
+      $.lang[lang][`register_question_${number}`] = `${number}. ${questions[lang][i]}`;
+      $.lang[lang][`register_desc_${number}`] = descriptions[lang][i];
+    }
 
-function renderQuestions(selectedLanguage) {
+    _.forEach([langs, cities, yesOrNo, vans], (optionSet) => {
+      for (let i = 0; i < optionSet.length; i++) {
+        const option = optionSet[i];
+        $.lang[lang][`register_option_${option.name}_${option.value}`] = option.label[lang];
+      }
+    });
+  });
+}
+prepareTranslations();
+
+function renderQuestions() {
   for (let i = 0; i < 11; i++) {
+
+
     const question = {
       number: i + 1,
       name: names[i],
-      title: questions[selectedLanguage][i] || '',
-      description: descriptions[selectedLanguage][i] || '',
       required: true,
       type: questionsTypeArr[i],
       options: options[i],
-      currentLanguage: selectedLanguage,
+      currentLanguage: currentLanguage,
     };
     const template = nunjucks.render('question.html', question);
     $('#register-form-content').append(template);
   }
+
+  setLanguage(currentLanguage);
 }
 
-renderQuestions(currentLanguage);
+renderQuestions();
 
 const $registerForm = $('#register-form');
 
@@ -203,7 +246,6 @@ $registerForm.submit(() => {
   const dataArr = $registerForm.serializeArray();
   const checkedServiceRegion = _.find(dataArr, {name: 'service_region'});
   const checkedCarTypes = _.find(dataArr, {name: 'car_types'});
-
 
   if (checkedCarTypes == null) {
     showErrorMessage('car_types');
