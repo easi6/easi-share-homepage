@@ -47,10 +47,12 @@ $.lang.en = {
   txt_apply_bottom_content: 'Eliminate trivial tasks with EMS to focus on things that matters most',
   txt_icp: '粤ICP备17020336号粤公网安备 44030402000541号<br>© 2017 深圳易智顺顺科技有限公司 Easi6 Limited. All Rights Reserved.',
   txt_terms_policy: 'Terms & Policy',
+  txt_register_title: 'Apply Easishare Management System',
+  txt_register_title_desc: 'Below are the basic information we need to get you started.<br>Our sales team will contract you for further guidance as soon as possible.',
 };
 
 $.lang.zh_rCN = {
-  locale: 'Simplified Chinese',
+  locale: '中文简体',
   txt_en: '英语',
   txt_ko: 'Korean',
   txt_zh_rTW: 'Traditional Chinese',
@@ -92,10 +94,12 @@ $.lang.zh_rCN = {
   txt_apply_bottom_content: 'Eliminate trivial tasks with EMS to focus on things that matters most',
   txt_icp: '粤ICP备17020336号粤公网安备 44030402000541号<br>© 2017 深圳易智顺顺科技有限公司 Easi6 Limited. All Rights Reserved.',
   txt_terms_policy: 'Terms & Policy',
+  txt_register_title: 'EMS易智行车辆管理系统',
+  txt_register_title_desc: '如需注册易智行车辆管理系统，请如实填写以下信息，谢谢！',
 };
 
 $.lang.zh_rTW = {
-  locale: 'Traditional Chinese',
+  locale: '中文繁体',
   txt_en: '英語',
   txt_ko: 'Korean',
   txt_zh_rTW: 'Traditional Chinese',
