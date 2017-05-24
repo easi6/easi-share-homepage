@@ -46,7 +46,13 @@ function setLanguage(lang) {
   _.forEach($('[data-langimg]'), (elem) => {
     const $elem = $(elem);
     $(document).ready(() => {
-      $elem.css('background-image', `url(${$.lang[currentLanguage][$elem.data('langimg')]})`);
+      $elem.css('background-image', `url(${$.lang[lang][$elem.data('langimg')]})`);
+    });
+  });
+  _.forEach($('[data-langsvg]'), (elem) => {
+    const $elem = $(elem);
+    $(document).ready(() => {
+      document.getElementById($elem.data('langsvg')).src = $.lang[lang][$elem.data('langsvg')];
     });
   });
 
