@@ -11,6 +11,7 @@
   <!-- 부트스트랩 -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/register.css">
   <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
 
   <!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
@@ -64,7 +65,7 @@
     <div class="container-fluid apply-field">
       <div class="center-div">
         <h1 class="apply-txt" data-langstr="title_apply">Be in control</h1>
-        <a class="apply-btn" data-langstr="btn_apply" href="/register.html">APPLY NOW</a>
+        <a class="apply-btn" data-langstr="btn_apply" role="button" data-tab="register" data-toggle="tab" href="#register">APPLY NOW</a>
       </div>
     </div>
     <!-- EMS Illust -->
@@ -158,11 +159,6 @@
         </div>
       </div>
     </div>
-    <!-- Apply bottom -->
-    <div class="apply-bottom-field">
-      <div class="apply-content-text" data-langstr="txt_apply_bottom_content">Eliminate trivial tasks with EMS to focus on things that matters most</div>
-      <a class="apply-btn" data-langstr="btn_apply" href="/register.html">APPLY NOW</a>
-    </div>
   </div>
   <!-- Customer -->
   <div class="tab-pane fade" role="tabpanel" id="customer">
@@ -208,11 +204,6 @@
         <div class="ems-service-title-text" data-langstr="title_customer_5">Designed for corporate customer (Coming Soon)</div>
         <div class="ems-service-subtitle-text" data-langstr="subtitle_customer_5">Allows corporate customers to request for reimbursements to their managers.</div>
       </div>
-    </div>
-    <!-- Apply bottom -->
-    <div class="apply-bottom-field">
-      <div class="apply-content-text" data-langstr="txt_apply_bottom_content">Eliminate trivial tasks with EMS to focus on things that matters most</div>
-      <button class="apply-btn" data-langstr="btn_apply" href="https://www.sojump.hk/jq/13895511.aspx">APPLY NOW</button>
     </div>
   </div>
   <!-- Manager -->
@@ -260,11 +251,6 @@
         <div class="ems-service-subtitle-text" data-langstr="subtitle_manager_5">Exchange orders with partnering suppliers. Make your business bigger with the same fleet size.</div>
       </div>
     </div>
-    <!-- Apply bottom -->
-    <div class="apply-bottom-field">
-      <div class="apply-content-text" data-langstr="txt_apply_bottom_content">Eliminate trivial tasks with EMS to focus on things that matters most</div>
-      <button class="apply-btn" data-langstr="btn_apply" href="https://www.sojump.hk/jq/13895511.aspx">APPLY NOW</button>
-    </div>
   </div>
   <!-- Driver -->
   <div class="tab-pane fade" role="tabpanel" id="driver">
@@ -311,10 +297,25 @@
         <div class="ems-service-subtitle-text" data-langstr="subtitle_driver_5">Record long-term contract orders up to date.</div>
       </div>
     </div>
-    <!-- Apply bottom -->
-    <div class="apply-bottom-field">
-      <div class="apply-content-text" data-langstr="txt_apply_bottom_content">Eliminate trivial tasks with EMS to focus on things that matters most</div>
-      <button class="apply-btn" data-langstr="btn_apply" href="https://www.sojump.hk/jq/13895511.aspx">APPLY NOW</button>
+  </div>
+  <div class="tab-pane fade" role="tabpanel" id="register">
+    <div class="register-form-field">
+      <div class="register-header">
+        <h1 data-langstr="txt_register_title">
+          Apply Easishare Management System
+        </h1>
+        <h2 data-langstr="txt_register_title_desc">
+          Below are the basic information we need to get you started.
+          Our sales team will contract you for further guidance as soon as possible.
+        </h2>
+      </div>
+      <form id="register-form" action="http://api.easixing.dev:9000/companies/signup_request">
+        <div id="register-form-content">
+        </div>
+        <div class="register-form-submit">
+          <input class="register-form-submit-btn" type="submit" value="Confirm" data-langstr="register_confirm_btn" />
+        </div>
+      </form>
     </div>
   </div>
 </div>
@@ -326,6 +327,7 @@
 <script src="vendors/lodash.min.js"></script>
 <script src="templates/question.js"></script>
 <script src="templates/bottom.js"></script>
+<script src="templates/apply-bottom.js"></script>
 <script src="scripts/index.js"></script>
 </body>
 </html>
