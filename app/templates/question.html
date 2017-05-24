@@ -13,14 +13,14 @@
       <input type="email" class="register-a-text-field" name="{{name}}" {% if required %} required="true" {% endif %} />
     {% elif type == 'radio' %}
       {% for option in options %}
-        <div class="register-radio-option">
+        <div class="register-radio-option custom-radio">
           <input type="radio" value="{{option.value}}" id="radio-{{name}}-{{option.value}}" name="{{name}}" {% if required %} required="true" {% endif %} />
           <label for="radio-{{name}}-{{option.value}}">{{option.label[currentLanguage]}}</label>
         </div>
       {% endfor %}
     {% elif type == 'checkbox' %}
       {% for option in options %}
-        <div class="register-checkbox-option">
+        <div class="register-checkbox-option custom-check">
           <input type="checkbox" value="{{option.value}}" id="check-{{name}}-{{option.value}}" name="{{name}}">
           <label for="check-{{name}}-{{option.value}}">{{option.label[currentLanguage]}}</label>
         </div>

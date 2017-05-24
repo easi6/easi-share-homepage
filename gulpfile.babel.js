@@ -37,10 +37,17 @@ import pkg from './package.json';
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 const nunjucks = require('gulp-nunjucks');
+const plumber = require('gulp-plumber');
+
+const uglifyes = require('uglify-es'); // can be a git checkout
+const composer = require('gulp-uglify/composer');
+
+const minify = composer(uglifyes, console);
 
 // Lint JavaScript
 gulp.task('lint', () =>
   gulp.src(['app/scripts/**/*.js','!node_modules/**','!app/vendors/**'])
+    .pipe(plumber())
     .pipe($.eslint())
     .pipe($.eslint.format())
     .pipe($.if(!browserSync.active, $.eslint.failAfterError()))
@@ -49,6 +56,7 @@ gulp.task('lint', () =>
 // Optimize images
 gulp.task('images', () =>
   gulp.src('app/images/**/*')
+    .pipe(plumber())
     .pipe($.cache($.imagemin({
       progressive: true,
       interlaced: true
@@ -65,14 +73,16 @@ gulp.task('copy', () => {
       'node_modules/apache-server-configs/dist/.htaccess'
     ], {
       dot: true
-    }).pipe(gulp.dest('dist'))
+    }).pipe(plumber())
+      .pipe(gulp.dest('dist'))
       .pipe($.size({title: 'copy'}));
 
     gulp.src([
       'app/vendors/*'
     ], {
       dot: true
-    }).pipe(gulp.dest('dist/vendors'))
+    }).pipe(plumber())
+      .pipe(gulp.dest('dist/vendors'))
       .pipe($.size({title: 'copyVendor'}));
   }
 );
@@ -96,6 +106,7 @@ gulp.task('styles', () => {
     'app/styles/**/*.scss',
     'app/styles/**/*.css'
   ])
+    .pipe(plumber())
     .pipe($.newer('.tmp/styles'))
     .pipe($.sourcemaps.init())
     .pipe($.sass({
@@ -122,13 +133,14 @@ gulp.task('scripts', () =>
       './app/scripts/main.js'
       // Other scripts
     ])
+      .pipe(plumber())
       .pipe($.newer('.tmp/scripts'))
       .pipe($.sourcemaps.init())
       .pipe($.babel())
       .pipe($.sourcemaps.write())
       .pipe(gulp.dest('.tmp/scripts'))
       .pipe($.concat('main.min.js'))
-      .pipe($.uglify({preserveComments: 'some'}))
+      .pipe(minify({}))
       // Output files
       .pipe($.size({title: 'scripts'}))
       .pipe($.sourcemaps.write('.'))
@@ -138,6 +150,7 @@ gulp.task('scripts', () =>
 
 gulp.task('nunjucks', () =>
   gulp.src('./app/templates/question.html')
+    .pipe(plumber())
     .pipe(nunjucks.precompile())
     .pipe(gulp.dest('.tmp/templates'))
     .pipe(gulp.dest('dist/templates'))
@@ -146,6 +159,7 @@ gulp.task('nunjucks', () =>
 // Scan your HTML for assets & optimize them
 gulp.task('html', () => {
   return gulp.src('app/**/*.html')
+    .pipe(plumber())
     .pipe($.useref({
       searchPath: '{.tmp,app}',
       noAssets: true
