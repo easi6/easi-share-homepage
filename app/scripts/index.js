@@ -49,6 +49,7 @@ $.lang.en = {
   txt_terms_policy: 'Terms & Policy',
   txt_register_title: 'Apply Easishare Management System',
   txt_register_title_desc: 'Below are the basic information we need to get you started.<br>Our sales team will contract you for further guidance as soon as possible.',
+  register_confirm_btn: 'Confirm',
 };
 
 $.lang.zh_rCN = {
@@ -96,6 +97,7 @@ $.lang.zh_rCN = {
   txt_terms_policy: 'Terms & Policy',
   txt_register_title: 'EMS易智行车辆管理系统',
   txt_register_title_desc: '如需注册易智行车辆管理系统，请如实填写以下信息，谢谢！',
+  register_confirm_btn: '提交',
 };
 
 $.lang.zh_rTW = {
@@ -141,6 +143,7 @@ $.lang.zh_rTW = {
   txt_apply_bottom_content: 'Eliminate trivial tasks with EMS to focus on things that matters most',
   txt_icp: '粤ICP备17020336号粤公网安备 44030402000541号<br>© 2017 深圳易智顺顺科技有限公司 Easi6 Limited. All Rights Reserved.',
   txt_terms_policy: 'Terms & Policy',
+  register_confirm_btn: 'Confirm',
 };
 
 $.lang.ko = {};
@@ -153,6 +156,10 @@ function setLanguage(currentLanguage) {
   _.forEach($('[data-langstr]'), (elem) => {
     const $elem = $(elem);
     $elem.html($.lang[currentLanguage][$elem.data('langstr')]);
+  });
+  _.forEach($('input[type=submit][data-langstr]'), (elem) => {
+    const $elem = $(elem);
+    $elem.val($.lang[currentLanguage][$elem.data('langstr')]);
   });
 }
 
