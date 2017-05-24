@@ -6,7 +6,7 @@ const savedLang = Cookies.get('lang');
 let currentLanguage = savedLang ? savedLang : 'zh_rCN';
 
 const firstHash = window.location.hash;
-if (firstHash !== "" && firstHash != null) {
+if (firstHash !== '' && firstHash != null) {
   $($(`[href='${firstHash}']`)[0]).tab('show');
 }
 
@@ -68,7 +68,7 @@ $('[data-toggle=\'popover\']').popover();
 $('[data-toggle=\'tab\']').click((evt) => {
   evt.preventDefault();
   const $target = $(evt.currentTarget);
-  location.href = '/'+$target.attr('href');
+  location.href = `/${$target.attr('href')}`;
   $('html, body').animate({
     scrollTop: 0,
   }, 600);
