@@ -154,19 +154,16 @@ $.langtype = {};
 $.langtype.en = {
   item1: 'zh_rCN',
   item2: 'zh_rTW',
-  item3: 'ko',
 };
 
 $.langtype.zh_rCN = {
   item1: 'zh_rTW',
   item2: 'en',
-  item3: 'ko',
 };
 
 $.langtype.zh_rTW = {
   item1: 'zh_rCN',
   item2: 'en',
-  item3: 'ko',
 };
 
 $.langtype.ko = {

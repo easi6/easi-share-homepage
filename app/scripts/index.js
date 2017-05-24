@@ -5,6 +5,11 @@
 const savedLang = Cookies.get('lang');
 let currentLanguage = savedLang ? savedLang : 'zh_rCN';
 
+if (currentLanguage === null || currentLanguage === undefined || currentLanguage === 'undefined') {
+  currentLanguage = 'zh_rCN';
+}
+
+
 function moveToHashTab(hash) {
   if (hash !== '' && hash != null) {
     $($(`[href='${hash}']`)[0]).tab('show');
@@ -52,7 +57,6 @@ function setBottomIcons(lang) {
   // hide wechat always temporally
   $('#nav-bottom-wechat').hide();
 
-
   if (['zh_rCN', 'zh_rTW'].indexOf(lang) >= 0) {
     $('#nav-bottom-facebook, #nav-bottom-instagram').hide();
   } else {
@@ -63,11 +67,13 @@ function setBottomIcons(lang) {
 // 언어 변경
 $('.lang-selector').click((evt) => {
   const langtype = $(evt.target).data('langtype');
-  let lang = currentLanguage;
-  lang = $.langtype[currentLanguage][langtype];
-  currentLanguage = lang;
-  Cookies.set('lang', lang);
-  setLanguage(lang);
+  const lang = $.langtype[currentLanguage][langtype];
+
+  if (['zh_rCN', 'zh_rTW', 'en', 'ko'].indexOf(lang) >= 0) {
+    currentLanguage = lang;
+    Cookies.set('lang', lang);
+    setLanguage(lang);
+  }
 });
 
 // Wechat popover
