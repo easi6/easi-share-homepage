@@ -13,6 +13,9 @@ $('#main, #customer, #manager, #driver, #register').append(bottomTemplate);
 // 언어팩 선언.
 $.lang = {};
 $.lang.en = {
+  img_manager_3: '../images/m-3@3x.png',
+  img_manager_4: '../images/m-4@3x.png',
+  img_manager_5: '../images/m-5@3x.png',
   locale: 'English',
   txt_support: 'Support',
   txt_login: 'Login',
@@ -57,6 +60,9 @@ $.lang.en = {
 };
 
 $.lang.zh_rCN = {
+  img_manager_3: '../images/m-3-tra@3x.png',
+  img_manager_4: '../images/m-4-tra@3x.png',
+  img_manager_5: '../images/m-5-tra@3x.png',
   locale: '中文简体',
   txt_support: '支持',
   txt_login: '登录',
@@ -149,6 +155,7 @@ $.lang.ko = {};
  * use $.lang[currentLanguage][languageNumber]
  */
 function setLanguage(lang) {
+  currentLanguage = lang;
   _.forEach($('[data-langstr]'), (elem) => {
     const $elem = $(elem);
     $elem.html($.lang[lang][$elem.data('langstr')]);
@@ -157,7 +164,14 @@ function setLanguage(lang) {
     const $elem = $(elem);
     $elem.val($.lang[lang][$elem.data('langstr')]);
   });
-  currentLanguage = lang;
+
+  _.forEach($('[data-langimg]'), (elem) => {
+    const $elem = $(elem);
+    // $elem.html($.lang[currentLanguage][$elem.data('langimg')]);
+    $(document).ready(function() {
+      $elem.css('background-image', 'url(' + $.lang[currentLanguage][$elem.data('langimg')] + ')');
+    });
+  });
 }
 
 // 언어 변경
