@@ -1,3 +1,6 @@
+$font-nanum: NanumBarunGothicOTF sans-serif;
+$font-replica: ReplicaPro sans-serif;
+
 html {
   height: 100%;
   font-family: sans-serif;
@@ -394,9 +397,11 @@ h7 {
   position: absolute;
   top: 0;
   left: 0;
-  font-family: FontAwesome;
   font-size: 34px;
   color: #000000;
+  img {
+    vertical-align: top;
+  }
 }
 
 .social-andasun, .social-rich {

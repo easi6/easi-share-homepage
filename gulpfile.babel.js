@@ -92,14 +92,6 @@ gulp.task('copy', () => {
     }).pipe(plumber())
       .pipe(gulp.dest('dist/css'))
       .pipe($.size({title: 'copyVendorCss'}));
-
-    gulp.src([
-      'app/fonts/**/*'
-    ], {
-      dot: true
-    }).pipe(plumber())
-      .pipe(gulp.dest('dist/fonts'))
-      .pipe($.size({title: 'copyVendorFonts'}));
   }
 );
 
