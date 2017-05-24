@@ -5,10 +5,18 @@
 const savedLang = Cookies.get('lang');
 let currentLanguage = savedLang ? savedLang : 'zh_rCN';
 
-const firstHash = window.location.hash;
-if (firstHash !== '' && firstHash != null) {
-  $($(`[href='${firstHash}']`)[0]).tab('show');
+function moveToHashTab(hash) {
+  if (hash !== '' && hash != null) {
+    $($(`[href='${hash}']`)[0]).tab('show');
+  }
 }
+
+const firstHash = window.location.hash;
+moveToHashTab(firstHash);
+
+$(window).on('hashchange', () => {
+  moveToHashTab(window.location.hash);
+});
 
 const applyBottomTemplate = nunjucks.render('apply-bottom.html', {});
 $('#main, #customer, #manager, #driver').append(applyBottomTemplate);
