@@ -391,7 +391,7 @@ $registerForm.submit(() => {
     }
 
     alert($.lang[currentLanguage].register_succeed || 'Thank you! We will be in touch shortly.');
-    // location.href = '/';
+    location.href = '/';
   };
   const dataType = 'json';
   $.ajax({
