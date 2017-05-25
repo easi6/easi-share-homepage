@@ -51,6 +51,8 @@ $.lang.en = {
   txt_register_title: 'Apply Easishare Management System',
   txt_register_title_desc: 'Below are the basic information we need to get you started.<br>Our sales team will contract you for further guidance as soon as possible.',
   register_confirm_btn: 'Confirm',
+  err_required: 'Please select one of these options.',
+  err_login_id_registered: 'This login ID is already taken.',
   register_succeed: 'Thank you! We will be in touch shortly.',
 
   text_home: 'Home',
@@ -149,6 +151,8 @@ $.lang.zh_rCN = {
   txt_register_title: 'EMS易智行车辆管理系统',
   txt_register_title_desc: '如需注册易智行车辆管理系统，请如实填写以下信息，谢谢！',
   register_confirm_btn: '提交',
+  err_required: '请至少选择一个选项。',
+  err_login_id_registered: '該登錄賬戶已經在使用中。',
   register_succeed: '谢谢！我们会尽快联系您。',
 
   // customer
@@ -246,6 +250,8 @@ $.lang.zh_rTW = {
   txt_register_title: 'EMS易智行車輛管理係統',
   txt_register_title_desc: '如需注冊易智行車輛管理係統，請如實填寫以下信息，謝謝！',
   register_confirm_btn: '提交',
+  err_required: '請至少選擇一個選項。',
+  err_login_id_registered: '该登录账户已经在使用中。',
   register_succeed: '謝謝！我們會盡快聯係您。',
 
   // customer

@@ -332,16 +332,39 @@ const $registerForm = $('#register-form');
 
 function showErrorMessage(name) {
   const matcher = `#${name}-qa-box .register-a-err`;
-  $(matcher).html($.lang[currentLanguage].err_required || 'Please select one of these options.');
+  let errorMsg;
+  if (name === 'login') {
+    errorMsg = $.lang[currentLanguage].err_login_id_registered || 'This login ID is already taken.';
+  } else {
+    errorMsg = $.lang[currentLanguage].err_required || 'Please select one of these options.';
+  }
+  $(matcher).html(errorMsg);
 }
 
 function removeAllErrorMessages() {
   $('.register-a-err').html('');
 }
 
+const isLocalhost = Boolean(window.location.hostname === 'localhost' ||
+  // [::1] is the IPv6 localhost address.
+  window.location.hostname === '[::1]' ||
+  // 127.0.0.1/8 is considered localhost for IPv4.
+  window.location.hostname.match(
+    /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
+  )
+);
+
+function scrollToHashLocation(hash) {
+  // location.href = hash;
+
+  $(document.body).animate({
+    scrollTop: $(hash).offset().top - 100,
+  }, 300);
+}
+
 $registerForm.submit(() => {
   removeAllErrorMessages();
-  const url = $registerForm.attr('action');
+  const url = isLocalhost ? 'http://easixing.dev:9000/companies/signup_request' : $registerForm.attr('action');
   const data = $registerForm.serialize();
 
   const dataArr = $registerForm.serializeArray();
@@ -350,19 +373,25 @@ $registerForm.submit(() => {
 
   if (checkedCarTypes == null) {
     showErrorMessage('car_types');
-    location.href = '#car_types-qa-box';
+    scrollToHashLocation('#car_types-qa-box');
     return false;
   }
 
   if (checkedServiceRegion == null) {
     showErrorMessage('service_region');
-    location.href = '#service_region-qa-box';
+    scrollToHashLocation('#service_region-qa-box');
     return false;
   }
 
   const success = (res) => {
+    if (res.available != null && !res.available) {
+      showErrorMessage('login');
+      scrollToHashLocation('#login-qa-box');
+      return;
+    }
+
     alert($.lang[currentLanguage].register_succeed || 'Thank you! We will be in touch shortly.');
-    location.href = '/';
+    // location.href = '/';
   };
   const dataType = 'json';
   $.ajax({
