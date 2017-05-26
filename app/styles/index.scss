@@ -189,10 +189,10 @@ hr {
 
 .illust-text {
   background: url("../images/ems-illust@2x.jpg") no-repeat center;
-  background-size: 660px;
+  background-size: 825px;
   position: relative;
-  max-width: 660px;
-  height: 558px;
+  width: 825px;
+  height: 700px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 55px;
@@ -216,7 +216,7 @@ h3 {
 
 .illust-customer {
   position: absolute;
-  top: 183px;
+  top: 33%;
   left: 50%;
   transform: translateX(-50%);
   color: #2450a0;
@@ -224,28 +224,28 @@ h3 {
 
 .illust-driver {
   position: absolute;
-  left: 78px;
-  bottom: 47px;
+  left: 10%;
+  bottom: 8%;
   color: #4aa0ff;
 }
 
 .illust-manager {
   position: absolute;
-  right: 59px;
-  bottom: 47px;
+  right: 10%;
+  bottom: 8%;
   color: #2f6dde;
 }
 
 .illust-serve {
   position: absolute;
-  top: 198px;
-  left: 61px;
+  top: 36%;
+  left: 10%;
 }
 
 .illust-order {
   position: absolute;
-  top: 198px;
-  right: 59px;
+  top: 36%;
+  right: 10%;
 }
 
 .illust-dispatch {
@@ -278,12 +278,13 @@ h3 {
 
 .service-list-item {
   padding: 0;
-  .service-list-item-layer {
-    transition: background-color 0.7s ease;
-  }
   &:hover {
-    .service-list-item-layer {
+    .ems-service-text-div {
+      z-index: 2;
+    }
 
+    .service-list-item-layer {
+      z-index: 1;
       position: absolute;
       left: 0;
       right: 0;
@@ -1096,6 +1097,12 @@ a.breadcrumb-font {
 }
 
 @media (max-height: 1200px) {
+  .illust-text {
+    background-size: 660px;
+    width: 660px;
+    height: 558px;
+  }
+
   .ems-service-title-text {
     font-size: 56px;
   }

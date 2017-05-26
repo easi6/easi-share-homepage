@@ -417,4 +417,4 @@ $registerForm.submit(() => {
 });
 
 setLanguage(currentLanguage);
-setLoginVisible('#' + $('.active').attr('id'));
+setLoginVisible(`#${$('.active').attr('id')}`);
