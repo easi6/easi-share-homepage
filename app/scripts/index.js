@@ -70,6 +70,15 @@ function setBottomIcons(lang) {
   }
 }
 
+function setLoginVisible(id) {
+  console.log(id);
+  if ('#register' === id) {
+    $('.nav-menu-login, .divider1').hide();
+  } else {
+    $('.nav-menu-login, .divider1').show();
+  }
+}
+
 // 언어 변경
 $('.lang-selector').click((evt) => {
   const langtype = $(evt.target).data('langtype');
@@ -88,11 +97,14 @@ $('[data-toggle=\'popover\']').popover();
 // 탭 이동
 $('[data-toggle=\'tab\']').click((evt) => {
   evt.preventDefault();
+
   const $target = $(evt.currentTarget);
   location.href = `/${$target.attr('href')}`;
   $('html, body').animate({
     scrollTop: 0,
   }, 600);
+
+  setLoginVisible($target.attr('href'));
 });
 
 /*
@@ -405,3 +417,4 @@ $registerForm.submit(() => {
 });
 
 setLanguage(currentLanguage);
+setLoginVisible('#' + $('.active').attr('id'));

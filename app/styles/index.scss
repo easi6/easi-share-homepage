@@ -19,6 +19,7 @@ hr {
 .divider1 {
   width: 1px;
   height: 30px;
+  margin-top: -5px;
   margin-left: 15px;
   margin-right: 15px;
   background: #d9d9d9;
@@ -33,9 +34,9 @@ hr {
 
 /* NavBar */
 .navbar-ems > li > a, .div-cs, .navbar-ems > .container-fluid, .navbar-ems > .navbar-header, .navbar-ems > .collapse, .nav-divider1 {
-  padding-top: 10px;
+  padding-top: 15px;
   padding-bottom: 0;
-  height: 70px;
+  height: 65px;
 }
 
 .navbar-ems {
@@ -640,13 +641,13 @@ h7 {
 
 .ems-service-main-title-text {
   font-family: $font-replica;
-  font-size: 46px;
+  font-size: 64px;
   color: #ffffff;
 }
 
 .ems-service-main-subtitle-text {
   font-family: $font-nanum;
-  font-size: 16px;
+  font-size: 28px;
   line-height: 1.5;
   color: #ffffff;
 }
@@ -818,6 +819,26 @@ a.breadcrumb-font {
   text-align: center;
 }
 
+.center-content-main-text {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.center-content-text {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  height: 40%;
+}
+
+.content-text-width {
+  max-width: 1000px;
+}
+
 .ems-service-title-text {
   font-family: $font-nanum;
   font-size: 28px;
@@ -826,7 +847,6 @@ a.breadcrumb-font {
 }
 
 .ems-service-subtitle-text {
-  max-width: 620px;
   font-family: $font-nanum;
   font-size: 14px;
   font-weight: bold;
@@ -1017,10 +1037,6 @@ a.breadcrumb-font {
     margin-right: auto;
   }
 
-  .center-content-main-text {
-    position: relative;
-  }
-
   .ems-service-subtitle-text {
     max-width: none;
   }
@@ -1070,15 +1086,7 @@ a.breadcrumb-font {
   }
 }
 
-
-
 @media (min-height: 1200px) {
-  .ems-service-main-title-text {
-    font-size: 92px;
-  }
-  .ems-service-main-subtitle-text {
-    font-size: 32px;
-  }
   .ems-service-title-text {
     font-size: 56px;
   }
@@ -1088,12 +1096,6 @@ a.breadcrumb-font {
 }
 
 @media (max-height: 1200px) {
-  .ems-service-main-title-text {
-    font-size: 92px;
-  }
-  .ems-service-main-subtitle-text {
-    font-size: 32px;
-  }
   .ems-service-title-text {
     font-size: 56px;
   }
@@ -1103,12 +1105,6 @@ a.breadcrumb-font {
 }
 
 @media (max-height: 1000px) {
-  .ems-service-main-title-text {
-    font-size: 69px;
-  }
-  .ems-service-main-subtitle-text {
-    font-size: 24px;
-  }
   .ems-service-title-text {
     font-size: 42px;
   }
@@ -1118,12 +1114,6 @@ a.breadcrumb-font {
 }
 
 @media (max-height: 800px) {
-  .ems-service-main-title-text {
-    font-size: 46px;
-  }
-  .ems-service-main-subtitle-text {
-    font-size: 16px;
-  }
   .ems-service-title-text {
     font-size: 28px;
   }
