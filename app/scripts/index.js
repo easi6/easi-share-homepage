@@ -70,8 +70,46 @@ function setBottomIcons(lang) {
   }
 }
 
-function setLoginVisible(id) {
-  console.log(id);
+function setTabChangeEvents(id) {
+  try {
+    $(window).unbind('scroll');
+    $.fn.fullpage.destroy('all');
+  } catch (e) {
+
+  }
+  if('#customer' === id || '#manager' === id || '#driver' === id) {
+    $(() => {
+      const fullpageId = `${'#fullpage' + '-'}${  id.substring(1)}`;
+      if($(fullpageId).length > 0) {
+        $($(fullpageId)).fullpage({
+          responsiveWidth: 1000,
+          verticalCentered: false,
+          css3: false,
+          fitToSection: false,
+          fitToSectionDelay: 30000,
+          afterLoad: function(anchorLink, index){
+            // index가 마지막 section으로 오면 scroll event를 끔
+            if(index == 6){
+              $.fn.fullpage.setAutoScrolling(false);
+            }
+          },
+        });
+
+        $(window).scroll(() => {
+          const height = $(window).scrollTop();
+          if(height < window.innerHeight * 5 - 5) {
+            $.fn.fullpage.setAutoScrolling(true);
+            if(height == '0') {
+              $.fn.fullpage.moveTo(0);
+            } else {
+              $.fn.fullpage.moveTo(5);
+            }
+          }
+        });
+      }
+    });
+  }
+
   if ('#register' === id) {
     $('.nav-menu-login, .divider1').hide();
   } else {
@@ -100,11 +138,7 @@ $('[data-toggle=\'tab\']').click((evt) => {
 
   const $target = $(evt.currentTarget);
   location.href = `/${$target.attr('href')}`;
-  $('html, body').animate({
-    scrollTop: 0,
-  }, 600);
-
-  setLoginVisible($target.attr('href'));
+  setTabChangeEvents($target.attr('href'));
 });
 
 /*
@@ -417,4 +451,4 @@ $registerForm.submit(() => {
 });
 
 setLanguage(currentLanguage);
-setLoginVisible(`#${$('.active').attr('id')}`);
+setTabChangeEvents(`#${$('.active').attr('id')}`);

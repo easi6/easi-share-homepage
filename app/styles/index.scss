@@ -73,7 +73,7 @@ hr {
 }
 
 /* Tab */
-.tab-content, .tab-pane {
+.tab-content, .tab-pane, .fullpage-div {
   height: 100%;
 }
 
@@ -656,7 +656,7 @@ h7 {
 .breadcrumb-list {
   display: table;
   position: absolute;
-  top: 50px;
+  top: 110px;
   left: 30px;
   text-align: center;
 }
@@ -1025,6 +1025,10 @@ a.breadcrumb-font {
 
   .scroll-icn {
     display: none;
+  }
+
+  .breadcrumb-list {
+    top: 50px;
   }
 
   .content-field {
