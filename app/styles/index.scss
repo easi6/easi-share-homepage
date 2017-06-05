@@ -13,6 +13,8 @@ body {
 }
 
 hr {
+  margin-top: 0;
+  margin-bottom: 0;
   color: #e5e5e5;
 }
 
@@ -116,15 +118,6 @@ hr {
   color: #000000;
 }
 
-/* Main Tap ---------------------------*/
-/* Apply */
-.apply-field {
-  position: relative;
-  background: url("../images/main@2x.jpg") no-repeat center;
-  background-size: cover;
-  height: 100%;
-}
-
 .center-div {
   position: absolute;
   top: 50%;
@@ -138,8 +131,47 @@ hr {
   transform: translate3d(-50%, -50%, 0);
 }
 
+/* Main Tap ---------------------------*/
+/* Apply */
+.apply-field {
+  position: relative;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.apply-image {
+  background: url("../images/main@2x.jpg") no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.apply-texts {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.apply-fix {
+  position: fixed;
+  z-index: -2;
+}
+
 .apply-txt {
-  margin-top: 0px;
+  margin-top: 0;
   margin-bottom: 30px;
   font-size: 54px;
   font-weight: bold;
@@ -168,6 +200,7 @@ hr {
   position: relative;
   padding-top: 70px;
   padding-bottom: 100px;
+  background: #ffffff;
 }
 
 /* EMS Illust */
