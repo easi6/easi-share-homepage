@@ -138,6 +138,10 @@ $('[data-toggle=\'tab\']').click((evt) => {
 
   const $target = $(evt.currentTarget);
   location.href = `/${$target.attr('href')}`;
+  $('html, body').animate({
+    scrollTop: 0,
+  }, 600);
+
   setTabChangeEvents($target.attr('href'));
 });
 
