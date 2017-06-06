@@ -56,9 +56,7 @@ function setLanguage(lang) {
   });
 
   setBottomIcons(lang);
-  if(isDropdownActive) {
-    mobileNavDropdownEvent();
-  }
+  mobileNavDropdownEvent();
 }
 
 function setBottomIcons(lang) {
@@ -79,7 +77,9 @@ function onClickDropdown() {
 }
 
 function mobileNavDropdownEvent() {
-  $('.navbar-toggle').click();
+  if(isDropdownActive) {
+    $('.navbar-toggle').click();
+  }
 }
 
 function setTabChangeEvents(id) {
@@ -147,9 +147,7 @@ function setTabChangeEvents(id) {
     $('.nav-menu-login, .divider1').show();
   }
 
-  if(isDropdownActive) {
-    mobileNavDropdownEvent();
-  }
+  mobileNavDropdownEvent();
 }
 
 function setMobileVisible() {

@@ -967,11 +967,6 @@ a.breadcrumb-font {
 
 /* 모바일인 경우(1000px 이하) 처리 */
 @media (max-width: 1000px) {
-  body {
-    overflow:scroll;
-    -webkit-overflow-scrolling:touch;
-  }
-
   .navbar-header {
     float: none;
   }
@@ -1166,10 +1161,6 @@ a.breadcrumb-font {
     max-width: none;
   }
 
-  .tab-pane {
-    overflow-x: hidden;
-  }
-
   .ems-service-main-title-text {
     font-size: 38px;
   }
@@ -1188,6 +1179,7 @@ a.breadcrumb-font {
   }
 
   .navbar-toggle {
+    display: block;
     border: none;
     background: transparent !important;
   }
