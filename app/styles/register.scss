@@ -152,4 +152,14 @@
       background-image: url("/images/radio-on.svg");
     }
   }
+
+  @media (max-width: 1000px) {
+    .register-header {
+      margin: 0 18px;
+    }
+
+    #register-form-content {
+      margin: 69px 18px 50px;
+    }
+  }
 }

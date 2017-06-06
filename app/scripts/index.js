@@ -9,7 +9,6 @@ if (currentLanguage === null || currentLanguage === undefined || currentLanguage
   currentLanguage = 'zh_rCN';
 }
 
-
 function moveToHashTab(hash) {
   if (hash !== '' && hash != null) {
     $($(`[href='${hash}']`)[0]).tab('show');
@@ -57,6 +56,9 @@ function setLanguage(lang) {
   });
 
   setBottomIcons(lang);
+  if(isDropdownActive) {
+    mobileNavDropdownEvent();
+  }
 }
 
 function setBottomIcons(lang) {
@@ -68,6 +70,16 @@ function setBottomIcons(lang) {
   } else {
     $('.nav-bottom-facebook, .nav-bottom-instagram').show();
   }
+}
+
+let isDropdownActive = false;
+
+function onClickDropdown() {
+  isDropdownActive = !isDropdownActive;
+}
+
+function mobileNavDropdownEvent() {
+  $('.navbar-toggle').click();
 }
 
 function setTabChangeEvents(id) {
@@ -89,7 +101,7 @@ function setTabChangeEvents(id) {
           fitToSectionDelay: 30000,
           afterLoad: function(anchorLink, index){
             // index가 마지막 section으로 오면 scroll event를 끔
-            if(index == 6){
+            if(window.innerWidth > 1000 && index == 6){
               $.fn.fullpage.setAutoScrolling(false);
             }
           },
@@ -97,7 +109,7 @@ function setTabChangeEvents(id) {
 
         $(window).scroll(() => {
           const height = $(window).scrollTop();
-          if(height < window.innerHeight * 5 - 5) {
+          if(window.innerWidth > 1000 && height < window.innerHeight * 5 - 5) {
             $.fn.fullpage.setAutoScrolling(true);
             if(height == '0') {
               $.fn.fullpage.moveTo(0);
@@ -134,6 +146,21 @@ function setTabChangeEvents(id) {
   } else {
     $('.nav-menu-login, .divider1').show();
   }
+
+  if(isDropdownActive) {
+    mobileNavDropdownEvent();
+  }
+}
+
+function setMobileVisible() {
+  const isVisible = window.innerWidth <= 1000;
+  if(isVisible) {
+    $('.apply-field-mobile, .navbar-ems-mobile').show();
+    $('.apply-field, .navbar-ems, .breadcrumb-list').hide();
+  } else {
+    $('.apply-field-mobile, .navbar-ems-mobile').hide();
+    $('.apply-field, .navbar-ems, .breadcrumb-list').show();
+  }
 }
 
 // 언어 변경
@@ -164,11 +191,9 @@ $('[data-toggle=\'tab\']').click((evt) => {
   setTabChangeEvents($target.attr('href'));
 });
 
-/*
- 추가적으로 유용한 처리.
- 1. 브라우저 언어에 따라 최초 언어 셋팅하기
- 2. 외부에서 URL ?lang=ja 접근시 셋팅하기
- */
+window.onresize = function(event) {
+  setMobileVisible();
+};
 
 const questions = {};
 questions.en = [
@@ -475,3 +500,4 @@ $registerForm.submit(() => {
 
 setLanguage(currentLanguage);
 setTabChangeEvents(`#${$('.active').attr('id')}`);
+setMobileVisible(false);

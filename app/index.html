@@ -7,6 +7,8 @@
   <!-- 위 3개의 메타 태그는 *반드시* head 태그의 처음에 와야합니다; 어떤 다른 콘텐츠들은 반드시 이 태그들 *다음에* 와야 합니다 -->
   <title data-langstr="title_ems">EMS</title>
   <meta name="renderer" content="webkit">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
   <!-- 부트스트랩 -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -29,11 +31,6 @@
       <a class="navbar-brand" role="tab" data-toggle="tab" data-target="#main" href="#main">
         <img style="height: 25px" id="svg_ems_logo" data-langsvg="svg_ems_logo" src="images/logo-ems.svg">
       </a>
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".top-navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
     </div>
     <div class="navbar-collapse collapse top-navbar">
       <ul class="nav navbar-nav navbar-right">
@@ -61,6 +58,31 @@
     </div>
   </div>
 </div>
+<!-- Mobile NavBar -->
+<div class="navbar-ems-mobile navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" role="tab" data-toggle="tab" data-target="#main" href="#main">
+        <img style="height: 25px" id="svg_ems_logo_mobile" data-langsvg="svg_ems_logo_mobile" src="images/logo-ems.svg">
+      </a>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" onclick="onClickDropdown();">
+        <div class="navbar-menu-icon"></div>
+      </button>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse top-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <!--<li class="nav-cs-icon"><a href="#"><img class="icon-cs" alt="cs" src="images/icon-cs.svg"></a></li>-->
+        <!--<li><a class="nav-menu-support top-nav-text" data-langstr="txt_support" href="#">Support</a></li>-->
+        <li class="dropdown mobile-dropdown">
+          <a class="nav-menu-login top-nav-text mobile-login-btn" data-langstr="txt_login" href="https://api.easi-share.com/companies" target="_blank">Login</a>
+          <a class="lang-selector" data-langstr="locale">English</a>
+          <a class="lang-selector" data-langtype="item1" data-langstr="lang_item_1">中文简体</a>
+          <a class="lang-selector" data-langtype="item2" data-langstr="lang_item_2">中文繁体</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 <!-- Tab -->
 <div id="myTabContent" class="tab-content">
   <!-- Main Tap -->
@@ -69,6 +91,13 @@
     <div class="container-fluid apply-field">
       <div class="apply-image apply-fix" data-depth="0.25" data-type="parallax"></div>
       <div class="apply-texts apply-fix" data-depth="0.5" data-type="parallax">
+        <h1 class="apply-txt" data-langstr="title_apply">Be in control</h1>
+        <a class="apply-btn" data-langstr="btn_apply" role="button" data-tab="register" data-toggle="tab" href="#register">APPLY NOW</a>
+      </div>
+    </div>
+    <!-- Apply mobile -->
+    <div class="container-fluid apply-field-mobile">
+      <div class="apply-center-div-mobile">
         <h1 class="apply-txt" data-langstr="title_apply">Be in control</h1>
         <a class="apply-btn" data-langstr="btn_apply" role="button" data-tab="register" data-toggle="tab" href="#register">APPLY NOW</a>
       </div>
