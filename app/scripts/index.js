@@ -71,10 +71,15 @@ function setBottomIcons(lang) {
 }
 
 let isDropdownActive = false;
+const mobileNavToggle = $('#mobile-nav-toggle');
 
-function onClickDropdown() {
-  isDropdownActive = !isDropdownActive;
-}
+mobileNavToggle.on('shown.bs.collapse', function() {
+  isDropdownActive = true;
+});
+
+mobileNavToggle.on('hidden.bs.collapse', function() {
+  isDropdownActive = false;
+});
 
 function mobileNavDropdownEvent() {
   if(isDropdownActive) {
@@ -101,31 +106,31 @@ function setTabChangeEvents(id) {
           fitToSectionDelay: 30000,
           afterLoad: function(anchorLink, index){
             // index가 마지막 section으로 오면 scroll event를 끔
-            if(window.innerWidth > 1000 && index == 6){
+            if(window.innerWidth > 1000 && index === 6){
               $.fn.fullpage.setAutoScrolling(false);
+
+              $(window).scroll(() => {
+                const height = $(window).scrollTop();
+                if(window.innerWidth > 1000 && height < window.innerHeight * 5 - 5) {
+                  $.fn.fullpage.setAutoScrolling(true);
+                  if(height === '0') {
+                    $.fn.fullpage.moveTo(0);
+                  } else {
+                    $.fn.fullpage.moveTo(5);
+                  }
+                }
+              });
             }
           },
-        });
-
-        $(window).scroll(() => {
-          const height = $(window).scrollTop();
-          if(window.innerWidth > 1000 && height < window.innerHeight * 5 - 5) {
-            $.fn.fullpage.setAutoScrolling(true);
-            if(height == '0') {
-              $.fn.fullpage.moveTo(0);
-            } else {
-              $.fn.fullpage.moveTo(5);
-            }
-          }
         });
       }
     });
   } else if('#main' === id) {
     (function() {
       window.addEventListener('scroll', function(event) {
-        let depth, i, layer, layers, len, movement, topDistance, translate3d;
-        topDistance = this.pageYOffset;
-        layers = document.querySelectorAll('[data-type=\'parallax\']');
+        let depth, i, layer, len, movement, translate3d;
+        const topDistance = this.pageYOffset;
+        const layers = document.querySelectorAll('[data-type=\'parallax\']');
         for (i = 0, len = layers.length; i < len; i++) {
           layer = layers[i];
           depth = layer.getAttribute('data-depth');

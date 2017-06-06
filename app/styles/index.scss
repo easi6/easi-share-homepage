@@ -1175,6 +1175,7 @@ a.breadcrumb-font {
     height: 100%;
     margin-top: 60px;
     z-index: -1;
+    background-color: rgba(0, 0, 0, 0.7);
   }
 
   .collapsing {
@@ -1199,7 +1200,7 @@ a.breadcrumb-font {
   }
 
   .shadow-div {
-    background-color: rgba(0, 0, 0, 0.7);
+    display: block;
   }
 
   .navbar-toggle.collapsed .navbar-menu-icon {
@@ -1210,7 +1211,7 @@ a.breadcrumb-font {
   }
 
   .navbar-toggle.collapsed .shadow-div {
-    background-color: transparent;
+    display: none;
   }
 }
 
