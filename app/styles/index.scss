@@ -13,6 +13,7 @@ body {
 }
 
 hr {
+  position: relative;
   margin-top: 0;
   margin-bottom: 0;
   color: #e5e5e5;
@@ -142,7 +143,6 @@ hr {
 .apply-field {
   position: relative;
   height: 100%;
-  z-index: -1;
   overflow: hidden;
 }
 
@@ -188,7 +188,6 @@ hr {
 
 .apply-fix {
   position: fixed;
-  z-index: -2;
 }
 
 .apply-txt {
