@@ -530,11 +530,11 @@ h7 {
 /* ICP */
 .icp-content-text {
   background: #2e2e2e;
-  padding: 12px;
+  padding: 9px;
   font-size: 12px;
   font-weight: normal;
   font-stretch: normal;
-  line-height: 1.58;
+  line-height: 1.3;
   letter-spacing: normal;
   text-align: center;
   color: #aaaaaa;
@@ -565,6 +565,8 @@ h7 {
 }
 
 .navbar-easi6 {
+  padding-top: 3px;
+  padding-bottom: 3px;
   opacity: 0.95;
   background-color: #000000;
 }
