@@ -73,11 +73,11 @@ function setBottomIcons(lang) {
 let isDropdownActive = false;
 const mobileNavToggle = $('#mobile-nav-toggle');
 
-mobileNavToggle.on('shown.bs.collapse', function() {
+mobileNavToggle.on('shown.bs.collapse', () => {
   isDropdownActive = true;
 });
 
-mobileNavToggle.on('hidden.bs.collapse', function() {
+mobileNavToggle.on('hidden.bs.collapse', () => {
   isDropdownActive = false;
 });
 
