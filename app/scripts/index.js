@@ -55,6 +55,8 @@ function setLanguage(lang) {
     });
   });
 
+  $('#policy-link').attr('href', `http://policy.easixing.com/ems/${lang}`);
+
   setBottomIcons(lang);
   mobileNavDropdownEvent();
 }
