@@ -55,7 +55,7 @@ function setLanguage(lang) {
     });
   });
 
-  $('#policy-link').attr('href', `http://policy.easixing.com/ems/${lang}`);
+  $('.policy-link').attr('href', `http://policy.easixing.com/ems/${lang}`);
 
   setBottomIcons(lang);
   mobileNavDropdownEvent();
@@ -223,7 +223,13 @@ questions.zh_rCN = [
 
   '贵公司可以接受易路的订单吗？',
 ];
-questions.zh_rTW = [];
+questions.zh_rTW = [
+  '公司名稱', '聯系方式', '公司詳細地址', '公司郵箱地址', '登錄賬號',
+
+  '語言設置', '貴公司業務所覆蓋的城市', '是否需要管理長租/固定合同的司機？', '貴公司的車輛類型有哪些？', '公司提供服務的區域類型？',
+
+  '貴公司可以接受易路的訂單嗎？',
+];
 
 const descriptions = {};
 descriptions.en = [
@@ -240,7 +246,13 @@ descriptions.zh_rCN = [
 
   null,
 ];
-descriptions.zh_rTW = [];
+descriptions.zh_rTW = [
+  '輸入貴公司的全稱', null, null, null, null,
+
+  null, null, null, '請選擇貴公司擁有的所有車輛類型', '請選擇貴公司擁有的所有車輛類型',
+
+  null,
+];
 
 const questionsTypeArr = [
   'text', 'text', 'text', 'email', 'text',
@@ -257,7 +269,7 @@ const yesOrNo = [
     label: {
       en: 'Yes',
       zh_rCN: '是',
-      zh_rTW: '',
+      zh_rTW: '是',
     },
   },
   {
@@ -266,7 +278,7 @@ const yesOrNo = [
     label: {
       en: 'No',
       zh_rCN: '否',
-      zh_rTW: '',
+      zh_rTW: '否',
     },
   },
 ];
@@ -284,7 +296,10 @@ cityNames.zh_rCN = [
   '深圳', '香港', '澳门', '珠海', '梅州',
   '广州', '台灣', 'Jakarta', 'Bali', 'Etc',
 ];
-cityNames.zh_rTW = [];
+cityNames.zh_rTW = [
+  '深圳', '香港', '澳門', '珠海', '梅州',
+  '廣州', '台灣', 'Jakarta', 'Bali', 'Etc',
+];
 
 for (let i = 0; i < cityNames.en.length; i++) {
   cities.push({
@@ -309,7 +324,9 @@ langNames.en = [
 langNames.zh_rCN = [
   '中文简体', '中文繁体', 'English',
 ];
-langNames.zh_rTW = [];
+langNames.zh_rTW = [
+  '中文简体', '中文繁体', 'English',
+];
 
 for (let i = 0; i < langNames.en.length; i++) {
   langs.push({
@@ -349,7 +366,16 @@ vanNames.zh_rCN = [
   '中巴（21座）',
   '豪华轿车（奥迪A6或类似车型）',
 ];
-vanNames.zh_rTW = [];
+vanNames.zh_rTW = [
+  '商務車（豐田埃爾法或類似車型）',
+  '轎車（凱美瑞或類似車型）',
+  '跨境商務車',
+  '跨境轎車',
+  '大巴（49座）',
+
+  '中巴（21座）',
+  '豪華轎車（奧迪A6或類似車型）',
+];
 
 for (let i = 0; i < vanNames.en.length; i++) {
   vans.push({
